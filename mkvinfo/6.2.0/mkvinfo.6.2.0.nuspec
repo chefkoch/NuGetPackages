@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>mkvinfo</id>
+        <version>6.2.0</version>
+        <title>mkvinfo</title>
+        <authors>Moritz Bunkus</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>https://raw.github.com/mbunkus/mkvtoolnix/master/COPYING</licenseUrl>
+        <projectUrl>http://www.bunkus.org/videotools/mkvtoolnix/</projectUrl>
+        <iconUrl>https://raw.github.com/mbunkus/mkvtoolnix/master/share/icons/128x128/mkvinfo.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This program lists all elements contained in a Matroska(tm). The output can be limited to a list of tracks in the file including information about the codecs used.</description>
+        <summary>mkvinfo -- Print information about elements in Matroska(tm) files</summary>
+    </metadata>
+    <files>
+        <file src="mkvinfo.targets" target="build\mkvinfo.targets" />
+        <file src="mkvinfo.exe" target="mkvinfo.exe" />
+    </files>
+</package>

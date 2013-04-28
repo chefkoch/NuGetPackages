@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>mkvpropedit</id>
+        <version>6.2.0</version>
+        <title>mkvpropedit</title>
+        <authors>Moritz Bunkus</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>https://raw.github.com/mbunkus/mkvtoolnix/master/COPYING</licenseUrl>
+        <projectUrl>http://www.bunkus.org/videotools/mkvtoolnix/</projectUrl>
+        <iconUrl>https://raw.github.com/mbunkus/mkvtoolnix/master/share/icons/128x128/mkvpropedit.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This program analyses an existing Matroska(tm) file and modifies some of its properties. Then it writes those modifications to the existing file. Among the properties that can be changed are the segment information elements (e.g. the title) and the track headers (e.g. the language code, 'default track' flag or the name).</description>
+        <summary>mkvpropedit -- Modify properties of existing Matroska(tm) files without a complete remux</summary>
+    </metadata>
+    <files>
+        <file src="mkvpropedit.targets" target="build\mkvpropedit.targets" />
+        <file src="mkvpropedit.exe" target="mkvpropedit.exe" />
+    </files>
+</package>
