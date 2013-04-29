@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.flac</id>
+        <version>2.4.1</version>
+        <title>BASS flac Addon (bassflac.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSFLAC is an extension to the BASS audio library, enabling the playing of FLAC (Free Lossless Audio Codec) encoded files.</description>
+        <summary>Contains the bassflac.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.flac.targets" target="build\bass.flac.targets" />
+        <file src="bassflac.chm" target="bassflac.chm" />
+        <file src="bassflac.dll" target="bassflac.dll" />
+        <file src="bassflac.txt" target="bassflac.txt" />
+    </files>
+</package>
