@@ -10,7 +10,7 @@ Details
 
 Content
 ---
-  - ``References\MediaInfo.dll``
+  - Copies ``MediaInfo.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
 
 Resources
 ---
