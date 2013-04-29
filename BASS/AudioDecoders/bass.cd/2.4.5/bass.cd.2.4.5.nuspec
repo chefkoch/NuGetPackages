@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.cd</id>
+        <version>2.4.5</version>
+        <title>BASS CD Addon (basscd.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSCD is an extension to the BASS audio library, enabling the streaming and ripping of CD audio tracks.</description>
+        <summary>Contains the basscd.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.cd.targets" target="build\bass.cd.targets" />
+        <file src="basscd.chm" target="basscd.chm" />
+        <file src="basscd.dll" target="basscd.dll" />
+        <file src="basscd.txt" target="basscd.txt" />
+    </files>
+</package>
