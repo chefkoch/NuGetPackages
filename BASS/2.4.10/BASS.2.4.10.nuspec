@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>BASS</id>
+        <version>2.4.10</version>
+        <title>BASS Core (bass.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS is an audio library for use in software on several platforms. Its purpose is to provide developers with powerful and efficient sample, stream (MP3, MP2, MP1, OGG, WAV, AIFF, custom generated, and more via OS codecs and add-ons), MOD music (XM, IT, S3M, MOD, MTM, UMX), MO3 music (MP3/OGG compressed MODs), and recording functions. All in a compact DLL that won't bloat your distribution.</description>
+        <summary>Contains the bass.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.targets" target="build\bass.targets" />
+        <file src="bass.chm" target="bass.chm" />
+        <file src="bass.dll" target="bass.dll" />
+        <file src="bass.txt" target="bass.txt" />
+    </files>
+</package>
