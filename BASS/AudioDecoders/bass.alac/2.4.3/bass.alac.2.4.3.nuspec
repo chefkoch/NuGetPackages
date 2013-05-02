@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.alac</id>
+        <version>2.4.3</version>
+        <title>BASS ALAC Addon (bass_alac.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_ALAC is an extension enabling the playback of ALAC (Apple Lossless) encoded files.</description>
+        <summary>Contains the bass_alac.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.alac.targets" target="build\bass.alac.targets" />
+        <file src="bass_alac.dll" target="bass_alac.dll" />
+        <file src="bass_alac.txt" target="bass_alac.txt" />
+    </files>
+</package>
