@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.adx</id>
+        <version>2.4.1.1</version>
+        <title>BASS ADX Addon (bass_adx.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_ADX is an extension enabling the playback of ADX encoded files.</description>
+        <summary>Contains the bass_adx.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.adx.targets" target="build\bass.adx.targets" />
+        <file src="bass_adx.dll" target="bass_adx.dll" />
+        <file src="bass_adx.txt" target="bass_adx.txt" />
+    </files>
+</package>
