@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.ac3</id>
+        <version>2.4.0.3</version>
+        <title>BASS AC3 Addon (bass_ac3.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_AC3 is an extension enabling the playback of AC3 encoded files and streams.</description>
+        <summary>Contains the bass_ac3.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.ac3.targets" target="build\bass.ac3.targets" />
+        <file src="bass_ac3.dll" target="bass_ac3.dll" />
+        <file src="bass_ac3.txt" target="bass_ac3.txt" />
+        <file src="gpl.txt" target="gpl.txt" />
+    </files>
+</package>
