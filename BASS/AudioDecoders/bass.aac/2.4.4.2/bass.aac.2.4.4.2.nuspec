@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.aac</id>
+        <version>2.4.4.2</version>
+        <title>BASS AAC Addon (bass_aac.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_AAC is an extension based on the FAAD2 decoder, enabling the playback of AAC/MP4 encoded files and streams, including AAC+ Shoutcast streams. The AAC/MP4 format is supported as standard by BASS via the OS's codecs on OSX and iOS (also Windows 7 and updated Vista).</description>
+        <summary>Contains the bass_aac.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.aac.targets" target="build\bass.aac.targets" />
+        <file src="bass_aac.dll" target="bass_aac.dll" />
+        <file src="bass_aac.txt" target="bass_aac.txt" />
+        <file src="gpl.txt" target="gpl.txt" />
+    </files>
+</package>
