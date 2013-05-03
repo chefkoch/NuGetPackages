@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.mpc</id>
+        <version>2.4.1.1</version>
+        <title>BASS MPC Addon (bass_mpc.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_MPC is an extension enabling the playback of Musepack encoded files and streams.</description>
+        <summary>Contains the bass_mpc.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.mpc.targets" target="build\bass.mpc.targets" />
+        <file src="bass_mpc.dll" target="bass_mpc.dll" />
+        <file src="bass_mpc.txt" target="bass_mpc.txt" />
+    </files>
+</package>
