@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.opus</id>
+        <version>2.4.1</version>
+        <title>BASS OPUS Addon (bassopus.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSOPUS is an extension enabling the playback of Opus encoded files and streams.</description>
+        <summary>Contains the bassopus.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.opus.targets" target="build\bass.opus.targets" />
+        <file src="bassopus.chm" target="bassopus.chm" />
+        <file src="bassopus.dll" target="bassopus.dll" />
+        <file src="bassopus.txt" target="bassopus.txt" />
+    </files>
+</package>
