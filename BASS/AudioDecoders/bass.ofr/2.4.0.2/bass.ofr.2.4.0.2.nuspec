@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.ofr</id>
+        <version>2.4.0.2</version>
+        <title>BASS OFR Addon (bass_ofr.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_OFR is an extension enabling the playback of OptimFROG encoded files.</description>
+        <summary>Contains the bass_ofr.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.ofr.targets" target="build\bass.ofr.targets" />
+        <file src="bass_ofr.dll" target="bass_ofr.dll" />
+        <file src="bass_ofr.txt" target="bass_ofr.txt" />
+        <file src="OptimFROG.dll" target="OptimFROG.dll" />
+    </files>
+</package>
