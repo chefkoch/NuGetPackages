@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.midi</id>
+        <version>2.4.8</version>
+        <title>BASS MIDI Addon (bassmidi.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSMIDI is an extension enabling the playback of MIDI files and custom event sequences, using SF2 soundfonts to provide the sounds, including support for packed soundfonts. MIDI input is also supported.</description>
+        <summary>Contains the bassmidi.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.midi.targets" target="build\bass.midi.targets" />
+        <file src="bassmidi.chm" target="bassmidi.chm" />
+        <file src="bassmidi.dll" target="bassmidi.dll" />
+        <file src="bassmidi.txt" target="bassmidi.txt" />
+    </files>
+</package>
