@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.wma</id>
+        <version>2.4.4</version>
+        <title>BASS WMA Addon (basswma.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSWMA is an extension enabling the playback of WMA files and streams, and also WMA encoding and broadcasting. Requires the Windows Media Format modules, which come installed with Windows Media Player or can be installed separately (wmfdist.exe). DRM support is available for commercial users.</description>
+        <summary>Contains the basswma.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.wma.targets" target="build\bass.wma.targets" />
+        <file src="basswma.chm" target="basswma.chm" />
+        <file src="basswma.dll" target="basswma.dll" />
+        <file src="basswma.txt" target="basswma.txt" />
+    </files>
+</package>
