@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.wv</id>
+        <version>2.4.4</version>
+        <title>BASS WV Addon (basswv.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSWV is an an extension enabling the playback of WavPack encoded files and streams.</description>
+        <summary>Contains the basswv.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.wv.targets" target="build\bass.wv.targets" />
+        <file src="basswv.chm" target="basswv.chm" />
+        <file src="basswv.dll" target="basswv.dll" />
+        <file src="basswv.txt" target="basswv.txt" />
+    </files>
+</package>
