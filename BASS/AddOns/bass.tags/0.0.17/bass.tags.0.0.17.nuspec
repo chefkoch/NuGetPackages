@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.tags</id>
+        <version>0.0.17</version>
+        <title>BASS Tags Addon (tags.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Tags is an extension producing formatted text from the ID3v1/v2, OGG/FLAC, WMA, APE, and MP4 tags of a BASS stream.</description>
+        <summary>Contains the tags.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.tags.targets" target="build\bass.tags.targets" />
+        <file src="tags.dll" target="tags.dll" />
+        <file src="tags.txt" target="tags.txt" />
+    </files>
+</package>
