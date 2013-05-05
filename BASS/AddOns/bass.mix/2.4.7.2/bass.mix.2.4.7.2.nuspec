@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.mix</id>
+        <version>2.4.7.2</version>
+        <title>BASSmix Addon (bassmix.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSmix is an extension providing the ability to mix together multiple BASS channels, with resampling and matrix mixing features. Also provides the ability to go the other way and split a BASS channel into multiple channels.</description>
+        <summary>Contains the bassmix.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.mix.targets" target="build\bass.mix.targets" />
+        <file src="bassmix.chm" target="bassmix.chm" />
+        <file src="bassmix.dll" target="bassmix.dll" />
+        <file src="bassmix.txt" target="bassmix.txt" />
+    </files>
+</package>
