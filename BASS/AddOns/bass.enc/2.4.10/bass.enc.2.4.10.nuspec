@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.enc</id>
+        <version>2.4.10</version>
+        <title>BASSenc Addon (bassenc.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSenc is an extension that allows BASS channels to be encoded using command-line encoders with STDIN support (LAME/OGGENC/etc), or ACM codecs (on Windows) or CoreAudio codecs (on OSX/iOS). Also features streaming of encoded data to clients directly or via Shoutcast and Icecast servers, and PCM/WAV file writing.</description>
+        <summary>Contains the bassenc.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.enc.targets" target="build\bass.enc.targets" />
+        <file src="bassenc.chm" target="bassenc.chm" />
+        <file src="bassenc.dll" target="bassenc.dll" />
+        <file src="bassenc.txt" target="bassenc.txt" />
+    </files>
+</package>
