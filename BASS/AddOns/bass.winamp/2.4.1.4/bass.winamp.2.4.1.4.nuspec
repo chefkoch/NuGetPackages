@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.winamp</id>
+        <version>2.4.1.4</version>
+        <title>BASS Winamp Addon (bass_winamp.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BassWinamp is an extension enabling the use of Winamp input plugins with BASS.</description>
+        <summary>Contains the bass_winamp.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.winamp.targets" target="build\bass.winamp.targets" />
+        <file src="bass_winamp.dll" target="bass_winamp.dll" />
+        <file src="bass_winamp.txt" target="bass_winamp.txt" />
+    </files>
+</package>
