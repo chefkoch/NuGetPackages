@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.wadsp</id>
+        <version>2.4.1</version>
+        <title>BASS WADSP Addon (bass_wadsp.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_WADSP is an extension enabling the use of Winamp DSP plugins with BASS.</description>
+        <summary>Contains the bass_wadsp.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.wadsp.targets" target="build\bass.wadsp.targets" />
+        <file src="bass_wadsp.dll" target="bass_wadsp.dll" />
+        <file src="bass_wadsp.txt" target="bass_wadsp.txt" />
+        <file src="readme.txt" target="readme.txt" />
+    </files>
+</package>
