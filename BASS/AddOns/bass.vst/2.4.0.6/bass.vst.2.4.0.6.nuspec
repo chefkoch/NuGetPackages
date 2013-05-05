@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.vst</id>
+        <version>2.4.0.6</version>
+        <title>BASS VST Addon (bass_vst.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS_VST is an extension enabling the use of VST effect plugins with BASS.</description>
+        <summary>Contains the bass_vst.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.vst.targets" target="build\bass.vst.targets" />
+        <file src="bass_vst.dll" target="bass_vst.dll" />
+        <file src="bass_vst.txt" target="bass_vst.txt" />
+    </files>
+</package>
