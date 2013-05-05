@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.fx</id>
+        <version>2.4.9</version>
+        <title>BASS FX Addon (bass_fx.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS FX is an extension providing several effects, including reverse playback and tempo and pitch control.</description>
+        <summary>Contains the bass_fx.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.fx.targets" target="build\bass.fx.targets" />
+        <file src="bass_fx.chm" target="bass_fx.chm" />
+        <file src="bass_fx.dll" target="bass_fx.dll" />
+        <file src="bass_fx.txt" target="bass_fx.txt" />
+    </files>
+</package>
