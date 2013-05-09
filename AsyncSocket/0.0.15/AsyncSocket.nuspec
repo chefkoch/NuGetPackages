@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>AsyncSocket</id>
+        <version>0.0.15</version>
+        <authors>deusty</authors>
+        <owners>Oxan</owners>
+        <licenseUrl>http://opensource.org/licenses/mit-license.php</licenseUrl>
+        <projectUrl>http://code.google.com/p/dotnetasyncsocket/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <summary>Asynchronous TCP/IP socket networking library</summary>
+        <description>AsyncSocket is a TCP/IP socket networking library for .NET. It's fully asynchronous with complete delegate support. It supports queued non-blocking reads and writes, with optional timeouts, automatic socket acceptance, delegate support, both IPv4 and IPv6 and encryption with SSL/TLS.</description>
+    </metadata>
+    <files>
+        <file src="Source\bin\Release\Deusty.Net.dll" target="lib\net20\Deusty.Net.dll" />
+        <file src="Source\bin\Release\Deusty.Net.pdb" target="lib\net20\Deusty.Net.pdb" />
+    </files>
+</package>
