@@ -6,7 +6,7 @@
         <title>FFmpeg (x86)</title>
         <authors>ffmpeg.org</authors>
         <owners>chefkoch</owners>
-        <licenseUrl>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</licenseUrl>
+        <licenseUrl>http://www.gnu.org/licenses/gpl-3.0.html</licenseUrl>
         <projectUrl>http://www.ffmpeg.org/</projectUrl>
         <iconUrl>http://www.ffmpeg.org/favicon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
