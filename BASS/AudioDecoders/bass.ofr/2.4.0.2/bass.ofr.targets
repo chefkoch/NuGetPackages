@@ -6,5 +6,8 @@
     </ItemGroup>
     <Target Name="BeforeBuild">
         <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+        <ItemGroup>
+            <FileWrites Include="@(Files->'$(TargetDir)%(Filename)%(Extension)')" />
+        </ItemGroup>
     </Target>
 </Project>
