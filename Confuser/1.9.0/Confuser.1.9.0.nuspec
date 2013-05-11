@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Confuser</id>
+        <version>1.9.0</version>
+        <title>Confuser</title>
+        <authors>Ki</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>https://raw.github.com/chefkoch/NuGetPackages/master/Confuser/resources/license.txt</licenseUrl>
+        <projectUrl>http://confuser.codeplex.com/</projectUrl>
+        <iconUrl>https://github.com/chefkoch/NuGetPackages/raw/master/Confuser/resources/Application.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Confuser is a protector/obfuscator for .NET, providing great security to .NET Applications. Features: Anti debugger, Anti memory dumping, Anti decompiler, Prevent any tampering of the assemblies, Encrypt codes, Encrypt constants (i.e. numbers and strings), Encrypt resources, Control flow obfuscation, External/Internal reference proxy and Renaming.</description>
+        <summary>Confuser is a protector/obfuscator for .NET, providing great security to .NET Applications.</summary>
+    </metadata>
+    <files>
+        <file src="Mono.Cecil.dll" target="tools\Mono.Cecil.dll" />
+        <file src="Mono.Cecil.Pdb.dll" target="tools\Mono.Cecil.Pdb.dll" />
+        <file src="Confuser.exe" target="tools\Confuser.exe" />
+        <file src="Confuser.Core.Injections.dll" target="tools\Confuser.Core.Injections.dll" />
+        <file src="Confuser.Core.dll" target="tools\Confuser.Core.dll" />
+        <file src="Confuser.Console.exe" target="tools\Confuser.Console.exe" />
+    </files>
+</package>
