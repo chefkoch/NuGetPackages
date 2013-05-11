@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Anysee.CI.API</id>
+        <version>0.0.1</version>
+        <title>Anysee CI API (CIAPI.dll)</title>
+        <authors>CIAPI developers</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.anysee.com/</licenseUrl>
+        <projectUrl>http://www.anysee.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Anysee CI API description.</description>
+        <summary>Contains the CIAPI.dll</summary>
+    </metadata>
+    <files>
+        <file src="Anysee.CI.API.targets" target="build\Anysee.CI.API.targets" />
+        <file src="CIAPI.dll" target="CIAPI.dll" />
+    </files>
+</package>
