@@ -11,9 +11,6 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>BASS.NET is a .NET API wrapper for BASS and all of the add-ons. Can be used with both C# and VB. Includes support for .Net Framework version 2.0 and 4.0 and Compact Framework 3.5.</description>
         <summary>Contains a .NET wrapper for bass.dll.</summary>
-        <dependencies>
-            <dependency id="BASS" />
-        </dependencies>
     </metadata>
     <files>
         <file src="lib\net20\Bass.Net.dll" target="lib\net20\Bass.Net.dll" />
