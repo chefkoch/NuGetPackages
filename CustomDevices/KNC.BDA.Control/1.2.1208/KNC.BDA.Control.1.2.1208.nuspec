@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>KNC.BDA.Control</id>
+        <version>1.2.1208</version>
+        <title>KNC BDA Control (KNCBDACTRL.dll)</title>
+        <authors>KNC ONE, ODSoft multimedia</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.knc1.com/</licenseUrl>
+        <projectUrl>http://www.knc1.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>KNC BDA Control description.</description>
+        <summary>Contains the KNCBDACTRL.dll</summary>
+    </metadata>
+    <files>
+        <file src="KNC.BDA.Control.targets" target="build\KNC.BDA.Control.targets" />
+        <file src="KNCBDACTRL.dll" target="KNCBDACTRL.dll" />
+    </files>
+</package>
