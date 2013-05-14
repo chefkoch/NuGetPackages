@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>TechnoTrend.BDA.API</id>
+        <version>1.0.1.21</version>
+        <title>TechnoTrend BDA API (ttBdaDrvApi_Dll.dll)</title>
+        <authors>TechnoTrend</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.technotrend.eu/</licenseUrl>
+        <projectUrl>http://www.technotrend.eu/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>TechnoTrend BDA API description.</description>
+        <summary>Contains the ttBdaDrvApi_Dll.dll</summary>
+    </metadata>
+    <files>
+        <file src="TechnoTrend.BDA.API.targets" target="build\TechnoTrend.BDA.API.targets" />
+        <file src="ttBdaDrvApi_Dll.dll" target="ttBdaDrvApi_Dll.dll" />
+    </files>
+</package>
