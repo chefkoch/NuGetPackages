@@ -5,7 +5,7 @@ MediaInfo
 
 Details
 ---
-  - Current version: 0.7.62
+  - Current version: 0.7.63
   - Installation command: ``Install-Package MediaInfo``
 
 Content

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>MediaInfo</id>
+        <version>0.7.63</version>
+        <title>MediaInfo.dll (x86)</title>
+        <authors>zenitram</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.gnu.org/copyleft/lesser.html</licenseUrl>
+        <projectUrl>http://mediainfo.sourceforge.net/</projectUrl>
+        <iconUrl>http://sourceforge.net/p/mediainfo/code/HEAD/tree/MediaInfo/trunk/Source/Resource/Image/MediaInfo.png?format=raw</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>MediaInfo is a convenient unified display of the most relevant technical and tag data for video and audio files.</description>
+        <summary>Contains the MediaInfo.dll</summary>
+    </metadata>
+    <files>
+        <file src="MediaInfo.targets" target="build\MediaInfo.targets" />
+        <file src="MediaInfo.dll" target="MediaInfo.dll" />
+    </files>
+</package>
