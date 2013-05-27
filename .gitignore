@@ -3,6 +3,7 @@
 
 # Binaries
 *.exe
+*.pdb
 *.7z
 *.dll
 /archives
