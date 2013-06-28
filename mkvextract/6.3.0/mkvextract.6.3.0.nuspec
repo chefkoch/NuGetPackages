@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>mkvextract</id>
+        <version>6.3.0</version>
+        <title>mkvextract</title>
+        <authors>Moritz Bunkus</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>https://raw.github.com/mbunkus/mkvtoolnix/master/COPYING</licenseUrl>
+        <projectUrl>http://www.bunkus.org/videotools/mkvtoolnix/</projectUrl>
+        <iconUrl>https://raw.github.com/mbunkus/mkvtoolnix/master/share/icons/128x128/mkvextract.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This program extracts specific parts from a Matroska(tm) file to other useful formats. The first argument, mode, tells mkvextract(1) what to extract. Currently supported is the extraction of tracks, tags, attachments, chapters, CUE sheets and timecodes. The second argument is the name of the source file. It must be a Matroska(tm) file. All following arguments are options and extraction specifications; both of which depend on the selected mode.</description>
+        <summary>mkvextract -- extract tracks from Matroska(tm) files into other files</summary>
+    </metadata>
+    <files>
+        <file src="mkvextract.targets" target="build\mkvextract.targets" />
+        <file src="mkvextract.exe" target="mkvextract.exe" />
+    </files>
+</package>

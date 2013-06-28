@@ -5,7 +5,7 @@ mkvinfo
 
 Details
 ---
-  - Current version: 6.2.0
+  - Current version: 6.3.0
   - Installation command: ``Install-Package mkvinfo``
 
 Content
