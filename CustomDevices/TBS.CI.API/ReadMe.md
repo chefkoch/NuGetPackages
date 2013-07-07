@@ -5,7 +5,7 @@ TBS.CI.API
 
 Details
 ---
-  - Current version: 1.0.1.0
+  - Current version: 1.0.1.3
   - Installation command: ``Install-Package TBS.CI.API``
 
 Content
