@@ -23,6 +23,10 @@ MySQL.Data.Entity
 
 Reason for Custom Packages
 ---
-There are also packages available at NuGet.org, but those does not seem to be up-to-date and also out of sync.
+There are also packages available at NuGet.org, but those do not seem to be up-to-date and are also
+out of sync. 
+
+The 5.1.7 package is kept for MPExtended, which requires this specific version due to an old Gentle
+library. The official 5.1.7 package is broken (for example, it contains a copy of NuGet.exe).
 
 [MySQL]:       http://www.mysql.com/downloads/connector/net/
