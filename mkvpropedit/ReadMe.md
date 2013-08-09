@@ -5,12 +5,18 @@ mkvpropedit
 
 Details
 ---
-  - Current version: 6.3.0
   - Installation command: ``Install-Package mkvpropedit``
 
 Content
 ---
   - Copies ``mkvpropedit.exe`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v6.3.0
+      - updated to [mkvtoolnix-unicode-6.3.0.7z](https://www.bunkus.org/videotools/mkvtoolnix/win32/)
+  - v6.2.0
+      - Initial package release [mkvtoolnix-unicode-6.2.0.7z](https://www.bunkus.org/videotools/mkvtoolnix/win32/)
 
 Resources
 ---
