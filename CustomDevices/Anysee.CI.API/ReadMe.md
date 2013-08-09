@@ -5,7 +5,6 @@ Anysee.CI.API
 
 Details
 ---
-  - Current version: unknown (0.0.1)
   - Installation command: ``Install-Package Anysee.CI.API``
 
 Content
@@ -14,6 +13,7 @@ Content
 
 Changelog
 ---
-  - 0.0.1: package creation based on files from TVE35 branch (unknown version)
+  - v0.0.1
+      - package creation based on files from TVE35 branch (unknown version)
 
 [Anysee.CI.API]:  http://www.anysee.com/
