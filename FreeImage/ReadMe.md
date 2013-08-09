@@ -5,12 +5,16 @@ FreeImage
 
 Details
 ---
-  - Current version: 3.15.4
   - Installation command: ``Install-Package FreeImage``
 
 Content
 ---
   - Copies ``FreeImage.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v3.15.4
+      - Initial package release (FreeImage.dll v3.15.4)
 
 Resources
 ---
