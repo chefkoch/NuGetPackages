@@ -5,7 +5,6 @@ TeVii.API
 
 Details
 ---
-  - Current version: unknown (0.0.1)
   - Installation command: ``Install-Package TeVii.API``
 
 Content
@@ -14,6 +13,7 @@ Content
 
 Changelog
 ---
-  - 0.0.1: package creation based on files from TVE35 branch (unknown version)
+  - v0.0.1
+      - package creation based on files from TVE35 branch (unknown version)
 
 [TeVii.API]:  http://www.tevii.com/
