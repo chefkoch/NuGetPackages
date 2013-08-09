@@ -5,11 +5,15 @@ BASS
 
 Details
 ---
-  - Current version: 2.4.10
   - Installation command: ``Install-Package BASS``
 
 Content
 ---
   - Copies ``bass.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.10
+      - Initial package release
 
 [BASS]:       http://www.un4seen.com/bass.html
