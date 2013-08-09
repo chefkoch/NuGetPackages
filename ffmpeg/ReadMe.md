@@ -5,12 +5,16 @@ FFmpeg
 
 Details
 ---
-  - Current version: 1.2 (1.2.0)
   - Installation command: ``Install-Package ffmpeg``
 
 Content
 ---
-  - ``References\ffmpeg.exe``
+  - Copies ``ffmpeg.exe`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v1.2.0
+      - Initial package release (FFMPEG v1.2)
 
 Resources
 ---
