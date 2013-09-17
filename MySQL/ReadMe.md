@@ -25,6 +25,8 @@ MySQL.Data.Entity
 
 Changelog
 ---
+  - v6.5.7
+      - Added new version from http://dev.mysql.com/downloads/connector/net/6.5.html
   - v6.5.x & 6.6.x
       - Renamed folders to prevent mulitple folders for the same minor version releases
   - v5.1.7

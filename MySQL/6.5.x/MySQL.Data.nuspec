@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MySQL.Data</id>
-        <version>6.5.6</version>
+        <version>6.5.7</version>
         <authors>Oracle Corporation</authors>
         <owners>chefkoch</owners>
         <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
