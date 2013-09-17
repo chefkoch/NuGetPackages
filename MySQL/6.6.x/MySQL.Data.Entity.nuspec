@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MySQL.Data.Entity</id>
-        <version>6.6.5</version>
+        <version>6.6.6</version>
         <authors>Oracle Corporation</authors>
         <owners>chefkoch</owners>
         <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
@@ -12,7 +12,7 @@
         <description>Connector/Net is a fully-managed ADO.NET driver for MySQL. This file contains the mysql.data.entity.dll for .NET 2 and .NET 4.</description>
         <summary>Connector/Net is a fully-managed ADO.NET driver for MySQL.</summary>
         <dependencies>
-            <dependency id="MySQL.Data" version="6.6.5" />
+            <dependency id="MySQL.Data" version="6.6.6" />
         </dependencies>
     </metadata>
     <files>

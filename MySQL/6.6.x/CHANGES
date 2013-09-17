@@ -1,3 +1,76 @@
+6.6.6
+- Fix for GetSchema returning MySqlException instead of ArgumentException when passing an invalid collection name
+  (Oracle bug #16271425, MySql bug #67901).
+- Fix for EF 4.3 failing when FK identifiers are too long (MySql bug #67285, Oracle bug #16286397).
+- Fix for race condition on ConnectionStringBuilder when using multiple threads 
+  (MySql bug #68217, Oracle bug #16310698).
+- Fix for stored routines being edited from Server explorer appear as ALTER, which may led
+  to syntax errors, which may led to Intellisense to stop working (Oracle bug #16357595).
+- Fix for Error in Server Explorer when refreshing a table or view (Oracle bug #16363908).
+- Fix for Intellisense not available for Views (Oracle bug #16384218).
+- Fix for "When saving a new stored procedure, it raises a windows error message", due to 
+  using definer (Oracle bug #16363828).
+- Fix for "The first time a new stored routine is saved, after save, Intellisense doesn't work (Oracle bug #16384238).
+- Fix for "Error when saving after changing an existing stored routine name in SQL in the editor" (Oracle bug #16390757).
+- Fix for server explorer error opening a remote connection (Oracle bug #16357786).
+- Fix for password expiration, new password dialog failed (Oracle bug #16357752).
+- Fix for Specifying delete cascade in EF migrations does not work (MySql bug #68457, Oracle bug #16398432).
+- Fix for InvalidCastException thrown when executing an stored function (MySql bug #64633, Oracle bug #13864627).
+- Fix for Default Command Timeout not applying for EFMySqlCommand (MySql bug #67171, Oracle bug #14825670).
+- Fix for Debugger cannot debug stored procedures with a main begin labeled and declare statements included (Oracle bug #16002371).
+- Fix for bug If using repair option, then vs2010 doesnt allow to connect to db (Oracle bug #16238242).
+- Fix for bug "Can't change the name for a view in view editor" (Oracle bug #13805346).
+- Fix for "Cannot change the name for a Foreign Key in table designer" (Oracle bug #16238068).
+- Fix for error when trying to set primary key for a column with same name as mysql keyword (like INT) in table designer
+  (Oracle bug #16238102).
+- Fix for databases not displayed in connect dialog for mysql script when correcting credentials, after entering a bad password
+  (Oracle bug #13805337).
+- Fix for Debugger fails trying to debug a stored routine in a MySql server hosted in linux without lower_case_table_names option enabled
+  (MySql bug #69065, Oracle bug #16770384).
+- Fix for Debugger issue, Values through watch tab shouldn't allow to be modified (Oracle bug #14545448).
+- Fix for Visual Studio Mysql editor colors cannot be customized (Oracle bug #16453324, MySql bug #67994).
+- Fix for Parser fails to recognizes a complex view (Oracle bug #16815427).
+- Fix for Altering table's primary key in designer not working (Oracle bug #16866053).
+- Fix for Connector/NET cannot read data from a MySql table using UTF-16/UTF-32 (MySql bug #69169, Oracle bug #16776818).
+- Fix for Entity Framework when inserts data having Identity columns (Oracle bug #16494585).
+- Fix for Malformed query in Entity Framework when eager loading due to multiple projections (MySql bug #67183, Oracle bug #16872852).
+- Fix for Migrations in Entity Framework when tries to update database that is already updated (Oracle bug #16869202, MySql bug#68889).
+- Fix for bug IIS application pool reset worker process causes website to crash (Oracle bug #16909237, Mysql Bug #67665).
+- Fix for intellisense completion, now Views are displayed together with Tables calling intellisense (Oracle Bug #16881451).
+- Fix for parser syntax, now the parser supports the clause ALTER TABLE table_name RENAME {INDEX|KEY} old_index_name TO new_index_name introduced in MySql 5.7. (Oracle Bug #16881481)
+- Fix for bug Error in LINQ to Entities query when using Distinct().Count() (MySql Bug #68513, Oracle bug #16950146).
+- Fix for occasionally return no data when socket connection is slow, interrupted or delayed (MySql bug #69039, Oracle bug #16950212).
+- Fix for ConstraintException when filling a datatable (MySql bug #65065, Oracle bug #16952323).
+- Fix for Debugging a routine produces an error when binary log is enabled (Oracle bug #16941181).  
+- Fix for nested sql generated for LINQ to Entities query with Take and Order by (MySql bug #65723, Oracle bug #16973939).
+- Several fixes for the parser:
+a) Added a all server supported keywords as identifiers to grammar.
+b) Solved some inconsistencies on they way begin (work) vs begin (block) was interpreted regarding server.
+c) Added to grammar missing comparison operators for 'handler table read'.
+d) Corrected several errors (instead of returning "missing EndOfFile" now returns "No viable alternative at input ...")/
+e) Added to grammar missing support for 'show count(*) warnings'.
+f) Fixed bug when case expression was accepting 'case end' (must only accept 'end').
+g) Added support for '$' in identifiers.
+h) Corrected some bugs in escape sequences (like not recognizing \b).
+i) Fixed a bug where not all session var references were recognized (@@session.var).
+j) Fixed some errors with aggregate functions (like not supporting ALL and DISTINCT).
+k) Added support for 'show full tables'.
+l) Corrected some inconsistencias with 'character set' clause among grammar statements.
+m) Corrected bad support for casting expressions
+n) Added support for missing expressions 'default' and 'values'.
+o) Added optional support for condition in 'case' expression.
+p) Made definition for column definition in DDLs more compliant with server.
+q) Added missing support for bool/boolean data types.
+r) Corrected some inconsistencies in collate for expressions.
+s) Added support for ws_nsweights & opt_ws_levels in weigth function.
+t) Corrected many arguments for functions with special syntax (like now being able to accept expressions instead of only literals).
+u) Removed some false keywords (engine names like myisam) from lexer spec.
+v) Added 200+ extra unit tests.
+- Fix for bad query when using LINQ to Entities with a query using Take, OrderBy & Contains in Code First (MySql bug #69751, Oracle bug #17194945).
+- Fix for Visual Studio parser for MySql does not recognize properly all valid identifiers (Oracle Bug #16881354).
+- Fix for LINQ to Entities error for bad aliasing in column for expression (MySql bug #69922, Oracle bug #17285548).
+- Fix for In stored routine debugger, after a case else a begin-end is badly instrumented (Oracle bug #17284598).
+
 6.6.5
 - Fix for bug Keyword not supported. Parameter name: AttachDbFilename (Mysql bug #66880, Oracle bug #14733472).
 - Added support to MySql script file to retrieve data when using "SHOW" statements.
