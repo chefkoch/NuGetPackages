@@ -25,6 +25,8 @@ MySQL.Data.Entity
 
 Changelog
 ---
+  - v6.7.4
+      - Added new version from http://dev.mysql.com/downloads/connector/net/6.7.html
   - v6.6.6
       - Added new version from http://dev.mysql.com/downloads/connector/net/6.6.html
   - v6.5.7
@@ -33,7 +35,7 @@ Changelog
       - Renamed folders to prevent mulitple folders for the same minor version releases
   - v5.1.7
       - Added older package for MPExtended, which requires this specific version due to an old Gentle
-library. The official 5.1.7 package is broken (for example, it contains a copy of NuGet.exe).
+        library. The official 5.1.7 package is broken (for example, it contains a copy of NuGet.exe).
   - v6.6.5
       - Added latest available version
   - v6.5.6
