@@ -2,7 +2,9 @@ MySQL.Data.Entity
 ===
 
 Connector/Net is a fully-managed ADO.NET driver for [MySQL].
-  - Current version: 6.6.5
+
+There are also packages available at NuGet.org, but those do not seem to be up-to-date and are also
+out of sync.
 
 MySQL.Data
 ---
@@ -21,12 +23,16 @@ MySQL.Data.Entity
   - ``lib\net20\mysql.data.entity.dll``
   - ``lib\net40\mysql.data.entity.dll``
 
-Reason for Custom Packages
+Changelog
 ---
-There are also packages available at NuGet.org, but those do not seem to be up-to-date and are also
-out of sync. 
-
-The 5.1.7 package is kept for MPExtended, which requires this specific version due to an old Gentle
+  - v6.5.x & 6.6.x
+      - Renamed folders to prevent mulitple folders for the same minor version releases
+  - v5.1.7
+      - Added older package for MPExtended, which requires this specific version due to an old Gentle
 library. The official 5.1.7 package is broken (for example, it contains a copy of NuGet.exe).
+  - v6.6.5
+      - Added latest available version
+  - v6.5.6
+      - Initial package release: added version currently by MP2 by that time
 
 [MySQL]:       http://www.mysql.com/downloads/connector/net/
