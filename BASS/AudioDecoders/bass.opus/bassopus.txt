@@ -90,6 +90,10 @@ There are of course bug fixes and other little improvements made along
 the way too! To make upgrading simpler, all functions affected by a
 change to the BASSOPUS interface are listed.
 
+2.4.1.1 - 1/8/2013
+------------------
+* Updated to libOpus 1.0.3
+
 2.4.1 - 25/2/2013
 -----------------
 * Chained Opus file pre-scanning is now optional
