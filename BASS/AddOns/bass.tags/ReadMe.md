@@ -5,11 +5,15 @@ bass.tags
 
 Details
 ---
-  - Current version: 0.0.17
   - Installation command: ``Install-Package bass.tags``
 
 Content
 ---
   - Copies ``tags.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v0.0.17
+      - Initial package release
 
 [bass.tags]:       http://www.un4seen.com/bass.html

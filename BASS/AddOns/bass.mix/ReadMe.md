@@ -5,11 +5,15 @@ bass.mix
 
 Details
 ---
-  - Current version: 2.4.7.2
   - Installation command: ``Install-Package bass.mix``
 
 Content
 ---
   - Copies ``bassmix.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.7.2
+      - Initial package release
 
 [bass.mix]:       http://www.un4seen.com/bass.html

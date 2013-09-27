@@ -5,12 +5,16 @@ bass.enc
 
 Details
 ---
-  - Current version: 2.4.10
   - Installation command: ``Install-Package bass.enc``
 
 Content
 ---
   - Copies ``bassenc.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.10
+      - Initial package release
 
 [bass.enc]:   http://www.un4seen.com/bass.html
 [LAME]:       http://www.un4seen.com/mo3.html#stuff

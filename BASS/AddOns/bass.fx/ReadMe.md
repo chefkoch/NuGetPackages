@@ -5,11 +5,15 @@ bass.fx
 
 Details
 ---
-  - Current version: 2.4.9
   - Installation command: ``Install-Package bass.fx``
 
 Content
 ---
   - Copies ``bass_fx.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.9
+      - Initial package release
 
 [bass.fx]:       http://www.un4seen.com/bass.html

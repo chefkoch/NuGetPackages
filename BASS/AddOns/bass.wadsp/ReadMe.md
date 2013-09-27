@@ -5,11 +5,15 @@ bass.wadsp
 
 Details
 ---
-  - Current version: 2.4.1
   - Installation command: ``Install-Package bass.wadsp``
 
 Content
 ---
   - Copies ``bass_wadsp.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.1
+      - Initial package release
 
 [bass.wadsp]:       http://www.un4seen.com/bass.html
