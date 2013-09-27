@@ -5,11 +5,15 @@ bass.spx
 
 Details
 ---
-  - Current version: 2.4.2
   - Installation command: ``Install-Package bass.spx``
 
 Content
 ---
   - Copies ``bass_spx.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.2
+      - Initial package release
 
 [bass.spx]:       http://www.un4seen.com/bass.html

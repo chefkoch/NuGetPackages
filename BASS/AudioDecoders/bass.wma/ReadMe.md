@@ -5,11 +5,15 @@ bass.wma
 
 Details
 ---
-  - Current version: 2.4.4
   - Installation command: ``Install-Package bass.wma``
 
 Content
 ---
   - Copies ``basswma.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.4
+      - Initial package release
 
 [bass.wma]:       http://www.un4seen.com/bass.html

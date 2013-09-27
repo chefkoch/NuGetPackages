@@ -5,11 +5,15 @@ bass.ofr
 
 Details
 ---
-  - Current version: 2.4.0.2
   - Installation command: ``Install-Package bass.ofr``
 
 Content
 ---
   - Copies ``bass_ofr.dll`` and ``OptimFROG.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.0.2
+      - Initial package release
 
 [bass.ofr]:       http://www.un4seen.com/bass.html

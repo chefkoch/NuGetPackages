@@ -5,11 +5,15 @@ bass.midi
 
 Details
 ---
-  - Current version: 2.4.8
   - Installation command: ``Install-Package bass.midi``
 
 Content
 ---
   - Copies ``bassmidi.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.8
+      - Initial package release
 
 [bass.midi]:       http://www.un4seen.com/bass.html

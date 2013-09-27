@@ -5,11 +5,15 @@ bass.alac
 
 Details
 ---
-  - Current version: 2.4.3
   - Installation command: ``Install-Package bass.alac``
 
 Content
 ---
   - Copies ``bass_alac.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.3
+      - Initial package release
 
 [bass.alac]:       http://www.un4seen.com/bass.html

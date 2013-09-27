@@ -5,11 +5,15 @@ bass.ac3
 
 Details
 ---
-  - Current version: 2.4.0.3
   - Installation command: ``Install-Package bass.ac3``
 
 Content
 ---
   - Copies ``bass_ac3.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.0.3
+      - Initial package release
 
 [bass.ac3]:       http://www.un4seen.com/bass.html

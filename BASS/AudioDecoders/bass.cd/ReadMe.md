@@ -5,11 +5,15 @@ bass.cd
 
 Details
 ---
-  - Current version: 2.4.5
   - Installation command: ``Install-Package bass.cd``
 
 Content
 ---
   - Copies ``basscd.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.5
+      - Initial package release
 
 [bass.cd]:       http://www.un4seen.com/bass.html

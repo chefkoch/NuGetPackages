@@ -5,11 +5,15 @@ bass.opus
 
 Details
 ---
-  - Current version: 2.4.1
   - Installation command: ``Install-Package bass.opus``
 
 Content
 ---
   - Copies ``bassopus.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.1
+      - Initial package release
 
 [bass.opus]:       http://www.un4seen.com/bass.html

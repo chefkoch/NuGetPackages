@@ -5,11 +5,15 @@ bass.flac
 
 Details
 ---
-  - Current version: 2.4.1
   - Installation command: ``Install-Package bass.flac``
 
 Content
 ---
   - Copies ``bassflac.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.1
+      - Initial package release
 
 [bass.flac]:       http://www.un4seen.com/bass.html

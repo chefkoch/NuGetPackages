@@ -5,11 +5,15 @@ bass.tta
 
 Details
 ---
-  - Current version: 2.4.0
   - Installation command: ``Install-Package bass.tta``
 
 Content
 ---
   - Copies ``bass_tta.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.0
+      - Initial package release
 
 [bass.tta]:       http://www.un4seen.com/bass.html

@@ -5,11 +5,15 @@ bass.mpc
 
 Details
 ---
-  - Current version: 2.4.1.1
   - Installation command: ``Install-Package bass.mpc``
 
 Content
 ---
   - Copies ``bass_mpc.dll`` during ``BeforeBuild``-targets to ``$(TargetDir)``
+
+Changelog
+---
+  - v2.4.1.1
+      - Initial package release
 
 [bass.mpc]:       http://www.un4seen.com/bass.html
