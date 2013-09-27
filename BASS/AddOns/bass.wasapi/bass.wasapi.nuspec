@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.wasapi</id>
+        <version>2.4.0</version>
+        <title>BASS WASAPI Addon (basswasapi.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASS WASAPI is an extension enabling the use of WASAPI input and output on Windows Vista and above, with support for exclusive and shared modes.</description>
+        <summary>Contains the basswasapi.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.wasapi.targets" target="build\bass.wasapi.targets" />
+        <file src="basswasapi.chm" target="basswasapi.chm" />
+        <file src="basswasapi.dll" target="basswasapi.dll" />
+    </files>
+</package>
