@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v2.0.0-git-20130801-f118b41
+      - Updated ``ffmpeg.exe`` to [ffmpeg-20130801-git-f118b41-win32-static.7z](http://ffmpeg.zeranoe.com/builds/win32/static/)
   - v1.2.0
       - Initial package release (FFMPEG v1.2)
 
