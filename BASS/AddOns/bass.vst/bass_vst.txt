@@ -78,3 +78,8 @@ be). Also note the version history and the disclaimer in this file.
 VST PlugIn Interface Technology by Steinberg Media Technologies GmbH
 
 Contact: drsilver@silverjuke.net - http://www.silverjuke.net
+
+NOTE: Version 2.4.5 and above was created by BaseHead, LLC
+For all questions regarding features added in this version of higher contact support@baseheadinc.com
+http://baseheadinc.com
+
