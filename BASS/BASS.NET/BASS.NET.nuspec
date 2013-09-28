@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>BASS.NET</id>
-        <version>2.4.10.1</version>
+        <version>2.4.10.3</version>
         <title>BASS.NET</title>
         <authors>Bernd Niedergesaess (bn@radio42.com)</authors>
         <owners>chefkoch</owners>

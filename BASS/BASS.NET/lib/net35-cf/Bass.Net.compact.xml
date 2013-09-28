@@ -2886,7 +2886,7 @@
             <list type="table">
             <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
             <item><term>BASS_ERROR_HANDLE</term><description><paramref name="channel"/> is not valid.</description></item>
-            <item><term>BASS_FX_ERROR_NODECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
+            <item><term>BASS_ERROR_DECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
             <item><term>BASS_ERROR_FORMAT</term><description>The <paramref name="channel"/>'s format is not supported. Make sure the channel is either Stereo or Mono.</description></item>
             </list>
             </para>
@@ -3104,7 +3104,7 @@
             <list type="table">
             <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
             <item><term>BASS_ERROR_HANDLE</term><description><paramref name="channel"/> is not valid.</description></item>
-            <item><term>BASS_FX_ERROR_NODECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
+            <item><term>BASS_ERROR_DECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
             <item><term>BASS_ERROR_HANDLE</term><description><paramref name="channel"/> is not valid.</description></item>
             </list>
             </para>
@@ -3184,7 +3184,7 @@
             </code>
             </example>
         </member>
-        <member name="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC,System.IntPtr)">
+        <member name="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC,System.IntPtr)">
             <summary>
             Get the original BPM of a decoding channel.
             </summary>
@@ -3199,7 +3199,7 @@
             <item><term>BASS_FX_FREESOURCE</term><description>Free the source handle as well?</description></item>
             </list>
             </param>
-            <param name="proc">User defined function to receive the process in percents (see <see cref="T:Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC"/>), use <see langword="null"/> if not in use.</param>
+            <param name="proc">User defined function to receive the process in percents (see <see cref="T:Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC"/>), use <see langword="null"/> if not in use.</param>
             <param name="user">User instance data to pass to the callback function.</param>
             <returns>If successful, the original BPM value is returned, else -1 is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
             <remarks>
@@ -3211,20 +3211,20 @@
             <list type="table">
             <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
             <item><term>BASS_ERROR_HANDLE</term><description><paramref name="channel"/> is not valid.</description></item>
-            <item><term>BASS_FX_ERROR_NODECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
+            <item><term>BASS_ERROR_DECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
             <item><term>BASS_ERROR_FORMAT</term><description>The <paramref name="channel"/>'s format is not supported. Make sure the channel is either Stereo or Mono.</description></item>
             <item><term>BASS_ERROR_ILLPARAM</term><description>An illegal parameter was specified.</description></item>
-            <item><term>BASS_FX_ERROR_BPMINUSE</term><description>BPM detection, for this <paramref name="channel"/> is already in use.</description></item>
+            <item><term>BASS_ERROR_ALREADY</term><description>BPM detection, for this <paramref name="channel"/> is already in use.</description></item>
             </list>
             </para>
             </remarks>
             <example>
             Get the BPM value for the first 120 seconds of a track:
             <code>
-            private BPMPROCESSPROC _bpmProc;
+            private BPMPROGRESSPROC _bpmProc;
             ...
             int stream = Bass.BASS_StreamCreateFile("test.mp3", 0L, 0L, BASSFlag.BASS_STREAM_DECODE);
-            _bpmProc = new BPMPROCESSPROC(MyBPMProc);
+            _bpmProc = new BPMPROGRESSPROC(MyBPMProc);
             float bpm = BassFx.BASS_FX_BPM_DecodeGet(stream, 0.0, 120.0, 0, BASSFXBpm.BASS_FX_BPM_BKGRND | 
                                                                             BASSFXBpm.BASS_FX_FREESOURCE | 
                                                                             BASSFXBpm.BASS_FX_BPM_MULT2, _bpmProc);
@@ -3236,10 +3236,10 @@
             }
             </code>
             <code lang="vbnet">
-            Private _bpmProc As BPMPROCESSPROC
+            Private _bpmProc As BPMPROGRESSPROC
             ...
             Dim stream As Integer = Bass.BASS_StreamCreateFile("test.mp3", 0L, 0L, BASSFlag.BASS_STREAM_DECODE)
-            _bpmProc = New BPMPROCESSPROC(AddressOf MyBPMProc)
+            _bpmProc = New BPMPROGRESSPROC(AddressOf MyBPMProc)
             Dim bpm As Single = BassFx.BASS_FX_BPM_DecodeGet(stream, 0.0, 120.0, 0, BASSFXBpm.BASS_FX_BPM_BKGRND Or 
                                                                                     BASSFXBpm.BASS_FX_FREESOURCE Or 
                                                                                     BASSFXBpm.BASS_FX_BPM_MULT2, _bpmProc)
@@ -3267,14 +3267,14 @@
             <param name="proc">User defined function to receive the beat position values (see <see cref="T:Un4seen.Bass.AddOn.Fx.BPMBEATPROC"/>).</param>
             <param name="user">User instance data to pass to the callback function.</param>
             <returns>If successful, <see langword="true"/> is returned, else <see langword="false"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
-            <remarks>This method works pretty much the same as <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_BeatCallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMBEATPROC,System.IntPtr)"/> respectivly <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC,System.IntPtr)"/> - it is almost a mix of the two of them.
+            <remarks>This method works pretty much the same as <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_BeatCallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMBEATPROC,System.IntPtr)"/> respectivly <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC,System.IntPtr)"/> - it is almost a mix of the two of them.
             <para>
             <list type="table">
             <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
             <item><term>BASS_ERROR_HANDLE</term><description><paramref name="channel"/> is not valid.</description></item>
-            <item><term>BASS_FX_ERROR_NODECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
+            <item><term>BASS_ERROR_DECODE</term><description>The <paramref name="channel"/> is not a decoding channel. Make sure the channel was created using the BASS_STREAM_DECODE or BASS_MUSIC_DECODE flag.</description></item>
             <item><term>BASS_ERROR_ILLPARAM</term><description>An illegal parameter was specified.</description></item>
-            <item><term>BASS_FX_ERROR_BPMINUSE</term><description>Beat detection, for this <paramref name="channel"/> is already in use.</description></item>
+            <item><term>BASS_ERROR_ALREADY</term><description>Beat detection, for this <paramref name="channel"/> is already in use.</description></item>
             </list>
             </para>
             </remarks>
@@ -3359,7 +3359,7 @@
             </summary>
             <param name="handle">Stream/music/wma/cd/any other supported add-on format.</param>
             <returns>If successful, <see langword="true"/> is returned, else <see langword="false"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
-            <remarks>Used together with <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC,System.IntPtr)"/> or <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_CallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMPROC,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,System.IntPtr)"/>.
+            <remarks>Used together with <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC,System.IntPtr)"/> or <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_CallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMPROC,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,System.IntPtr)"/>.
             If BASS_FX_FREESOURCE was used, this will also free the underlying decoding channel as well.
             You can't set/get this flag with <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>/<see cref="M:Un4seen.Bass.Bass.BASS_ChannelGetInfo(System.Int32,Un4seen.Bass.BASS_CHANNELINFO)"/>.
             <para>
@@ -3658,7 +3658,7 @@
         </member>
         <member name="T:Un4seen.Bass.AddOn.Fx.BASSFXBpm">
             <summary>
-            BASS_FX BPM/Beat options, to be used with <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC,System.IntPtr)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_CallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMPROC,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,System.IntPtr)"/> resp. <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_BeatDecodeGet(System.Int32,System.Double,System.Double,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMBEATPROC,System.IntPtr)"/>.
+            BASS_FX BPM/Beat options, to be used with <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC,System.IntPtr)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_CallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMPROC,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,System.IntPtr)"/> resp. <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_BeatDecodeGet(System.Int32,System.Double,System.Double,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMBEATPROC,System.IntPtr)"/>.
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Fx.BASSFXBpm.BASS_FX_BPM_DEFAULT">
@@ -3919,12 +3919,12 @@
         </member>
         <member name="F:Un4seen.Bass.AddOn.Fx.BASSBFXBQF.BASS_BFX_BQF_BANDPASS">
             <summary>
-            BiQuad Bandpass filter.
+            BiQuad Bandpass filter (constant 0 dB peak gain).
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Fx.BASSBFXBQF.BASS_BFX_BQF_BANDPASS_Q">
             <summary>
-            BiQuad Bandpass Q filter.
+            BiQuad Bandpass Q filter (constant skirt gain, peak gain = Q).
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Fx.BASSBFXBQF.BASS_BFX_BQF_NOTCH">
@@ -4050,6 +4050,38 @@
             <summary>
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
+        </member>
+        <member name="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE">
+            <summary>
+            Used with <see cref="M:Un4seen.Bass.Bass.BASS_ChannelSetFX(System.Int32,Un4seen.Bass.BASSFXType,System.Int32)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_FXSetParameters(System.Int32,System.Object)"/> and <see cref="M:Un4seen.Bass.Bass.BASS_FXGetParameters(System.Int32,System.Object)"/> to retrieve and set the parameters of the DSP effect Rotate.
+            </summary>
+            <remarks>
+            <para>This is a volume rotate effect between even channels, just like 2 channels playing ping-pong between each other.</para>
+            <para>The fRate defines the speed in Hz.</para>
+            </remarks>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE.fRate">
+            <summary>
+            Rotation rate/speed in Hz (A negative rate can be used for reverse direction).
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE.lChannel">
+            <summary>
+            A <see cref="T:Un4seen.Bass.AddOn.Fx.BASSFXChan"/> flag to define on which channels to apply the effect.
+            <para>Default: -1 (BASS_BFX_CHANALL) - all channels.</para>
+            </summary>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE.#ctor(System.Single,Un4seen.Bass.AddOn.Fx.BASSFXChan)">
+            <summary>
+            Constructor already setting the members.
+            </summary>
+            <param name="Rate">Rotation rate/speed in Hz (A negative rate can be used for reverse direction).</param>
+            <param name="chans">The channel control flag defining on which channels the effect should be applied to (a combinbation of <see cref="T:Un4seen.Bass.AddOn.Fx.BASSFXChan"/>).</param>
         </member>
         <member name="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO">
             <summary>
@@ -5324,7 +5356,6 @@
             </para>
             <para>With any threshold/ratio combination, you could calculate the gain for a 0dB peak like this:
             fGain=fThreshold*(1/fRatio-1)</para>
-            <para></para>
             </remarks>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR2.fGain">
@@ -5577,29 +5608,38 @@
         </member>
         <member name="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_BQF">
             <summary>
-            Used with <see cref="M:Un4seen.Bass.Bass.BASS_ChannelSetFX(System.Int32,Un4seen.Bass.BASSFXType,System.Int32)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_FXSetParameters(System.Int32,System.Object)"/> and <see cref="M:Un4seen.Bass.Bass.BASS_FXGetParameters(System.Int32,System.Object)"/> to retrieve and set the parameters of the DSP effect Dynamic Range Compressor.
+            Used with <see cref="M:Un4seen.Bass.Bass.BASS_ChannelSetFX(System.Int32,Un4seen.Bass.BASSFXType,System.Int32)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_FXSetParameters(System.Int32,System.Object)"/> and <see cref="M:Un4seen.Bass.Bass.BASS_FXGetParameters(System.Int32,System.Object)"/> to retrieve and set the parameters of the DSP effect BiQuad filter.
             </summary>
             <remarks>
-            Dynamic range compression also called DRC, or simply compression, is a process that reduces the dynamic range of an audio signal. 
-            Compression is used during sound recording, live sound reinforcement, and broadcasting to control the level of audio. A compressor is the device used to apply compression.
-            <para>Compressors are commonly used in recording to control the level, by making loud passages quieter, and quiet passages louder. 
-            This is useful in allowing a vocalist to sing quiet and loud for different emphasis, and always be heard clearly in the mix. 
-            Compression is generally applied to guitar to give clean sustain, where the start of a note is "squashed" with the gain automatically increased as the not fades away. 
-            Compressors take a short time to react to a picked note, and it can be difficult to find settings that react quickly enough to the volume change without killing the natural attack sound of your guitar.</para>
-            <para>The fThreshold sets the level above which volume is reduced in level while quiet sound are untreated (downward compression). 
-            The fAttack controls how fast the unit responds to volume increases. 
-            The fRelease controls how slowly the unit responds to decreasing volume.</para>
-            <para>The compressor reduces the gain (level) of an audio signal if its amplitude exceeds a threshold (using RMS sensing with a hard knee). 
-            The amount of gain reduction is determined by a ratio. For example, with a ratio of 4:1, when the (time averaged) input level is 4 dB over the threshold, the output signal level will be 1 dB over the threshold. 
-            The gain (level) has been reduced by 3 dB. When the input level is 8 dB above the threshold, the output level will be 2 dB; a 6 dB gain reduction.
-            A more specific example for a 4:1 ratio:
-            Threshold = −10 dB;
-            Input = −6 dB (4 dB above the threshold);
-            Output = −9 dB (1 dB above the threshold)
+            BiQuad filters are second-order recursive linear filters. 
+            <para><b>BASS_BFX_BQF_LOWPASS:</b><br/>
+            A low-pass filter is a filter that passes low-frequency signals but attenuates (reduces the amplitude of) signals with frequencies higher than the fCenter frequency. The actual amount of attenuation for each frequency varies from filter to filter. It is sometimes called a high-cut filter, or treble cut filter when used in audio applications. A low-pass filter is the opposite of a high-pass filter, and a band-pass filter is a combination of a low-pass and a high-pass.
             </para>
-            <para>With any threshold/ratio combination, you could calculate the gain for a 0dB peak like this:
-            fGain=fThreshold*(1/fRatio-1)</para>
-            <para></para>
+            <para><b>BASS_BFX_BQF_HIGHPASS:</b><br/>
+            A high-pass filter is an LTI filter that passes high frequencies well but attenuates (i.e., reduces the amplitude of) frequencies lower than the fCenter frequency. The actual amount of attenuation for each frequency is a design parameter of the filter. It is sometimes called a low-cut filter; the terms bass-cut filter or rumble filter are also used in audio applications.
+            </para>
+            <para><b>BASS_BFX_BQF_BANDPASS:</b><br/>
+            A band-pass filter is a device that passes frequencies within a certain range and rejects (attenuates) frequencies outside that range. An example of an analogue electronic band-pass filter is an RLC circuit (a resistor–inductor–capacitor circuit). These filters can also be created by combining a low-pass filter with a high-pass filter.
+            </para>
+            <para><b>BASS_BFX_BQF_NOTCH:</b><br/>
+            In signal processing, a band-stop filter or band-rejection filter is a filter that passes most frequencies unaltered, but attenuates those in a specific range to very low levels. It is the opposite of a band-pass filter. A notch filter is a band-stop filter with a narrow stopband (high Q factor). Notch filters are used in live sound reproduction (Public Address systems, also known as PA systems) and in instrument amplifier (especially amplifiers or preamplifiers for acoustic instruments such as acoustic guitar, mandolin, bass instrument amplifier, etc.) to reduce or prevent feedback, while having little noticeable effect on the rest of the frequency spectrum. Other names include 'band limit filter', 'T-notch filter', 'band-elimination filter', and 'band-reject filter'.
+            </para>
+            <para><b>BASS_BFX_BQF_ALLPASS:</b><br/>
+            An all-pass filter is a signal processing filter that passes all frequencies equally, but changes the phase relationship between various frequencies. It does this by varying its propagation delay with frequency. Generally, the filter is described by the frequency at which the phase shift crosses 90° (i.e., when the input and output signals go into quadrature — when there is a quarter wavelength of delay between them).
+            </para>
+            <para><b>BASS_BFX_BQF_PEAKINGEQ:</b><br/>
+            A peaking equalizer raises or lowers a range of frequencies around a central point in a bell shape. A peaking equalizer with controls to adjust the level (fGain), fBandwidth (fQ) and center frequency (Hz) is called a parametric equalizer.
+            Peaking Equalizer in BASS_FX can be achieved directly and efficiently by <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PEAKEQ"/>.
+            </para>
+            <para><b>BASS_BFX_BQF_ALLPASS:</b><br/>
+            An all-pass filter is a signal processing filter that passes all frequencies equally, but changes the phase relationship between various frequencies. It does this by varying its propagation delay with frequency. Generally, the filter is described by the frequency at which the phase shift crosses 90° (i.e., when the input and output signals go into quadrature — when there is a quarter wavelength of delay between them).
+            </para>
+            <para><b>BASS_BFX_BQF_LOWSHELF:</b><br/>
+            A low-shelf filter passes all frequencies, but increasing or reducing frequencies below the fCenter frequency by specified amount.
+            </para>
+            <para><b>BASS_BFX_BQF_HIGHSHELF:</b><br/>
+            A high-shelf filter passes all frequencies, but increasing or reducing frequencies above the fCenter frequency by specified amount.
+            </para>
             </remarks>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_BQF.lFilter">
@@ -5657,13 +5697,115 @@
             <param name="s">A shelf slope parameter (linear, used only with Shelving filters) (0...1...n).</param>
             <param name="chans">The channel control flag defining on which channels the effect should be applied to (a combinbation of <see cref="T:Un4seen.Bass.AddOn.Fx.BASSFXChan"/>).</param>
         </member>
-        <member name="T:Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC">
+        <member name="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4">
+            <summary>
+            Used with <see cref="M:Un4seen.Bass.Bass.BASS_ChannelSetFX(System.Int32,Un4seen.Bass.BASSFXType,System.Int32)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_FXSetParameters(System.Int32,System.Object)"/> and <see cref="M:Un4seen.Bass.Bass.BASS_FXGetParameters(System.Int32,System.Object)"/> to retrieve and set the parameters of the DSP effect Echo 4.
+            </summary>
+            <remarks>
+            <para>This is an echo effect that replays what you have played one or more times after a period of time. It's something like the echoes you might hear shouting against a canyon wall. For reverb effect enable feedback.</para>
+            <para>The fDryMix is the volume of input signal and the fWetMix is the volume of delayed signal. The fDelay is the delay time in sec. The fFeedback sets how much delay is feed back to the input (for repeating delays). If bStereo is enabled and a stream has an even number of channels then, each even channels will be echoed to each other.</para>
+            </remarks>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.fDryMix">
+            <summary>
+            Dry (unaffected) signal mix (-2...+2). Default = 0.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.fWetMix">
+            <summary>
+            Wet (affected) signal mix (-2...+2). Default = 0.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.fFeedback">
+            <summary>
+            Output signal to feed back into input (-1...+1). Default = 0 (disabled).
+            </summary>
+            <remarks>Used for reverb effects.</remarks>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.fDelay">
+            <summary>
+            Delay in seconds (0&lt;...n). Default = 0.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.bStereo">
+            <summary>
+            Echo adjoining channels to each other? Default is disabled.
+            </summary>
+            <remarks>Only allowed with even number of channels!
+            <para>If enabled and a stream has an even number of channels then, each even channels will be echoed to each other.</para>
+            </remarks>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.lChannel">
+            <summary>
+            A <see cref="T:Un4seen.Bass.AddOn.Fx.BASSFXChan"/> flag to define on which channels to apply the effect.
+            <para>Default: -1 (BASS_BFX_CHANALL) - all channels.</para>
+            </summary>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            Constructor already setting the members
+            </summary>
+            <param name="DryMix">Dry (unaffected) signal mix (-2..+2)</param>
+            <param name="WetMix">Wet (affected) signal mix (-2..+2)</param>
+            <param name="Delay">Delay in seconds (0&lt;..6)</param>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Constructor already setting the members
+            </summary>
+            <param name="DryMix">Dry (unaffected) signal mix (-2..+2)</param>
+            <param name="WetMix">Wet (affected) signal mix (-2..+2)</param>
+            <param name="Delay">Delay in seconds (0&lt;..6)</param>
+            <param name="Feedback">Output signal to feed back into input (-1...+1).</param>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.#ctor(System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Constructor already setting the members
+            </summary>
+            <param name="DryMix">Dry (unaffected) signal mix (-2..+2)</param>
+            <param name="WetMix">Wet (affected) signal mix (-2..+2)</param>
+            <param name="Delay">Delay in seconds (0&lt;..6)</param>
+            <param name="Feedback">Output signal to feed back into input (-1...+1).</param>
+            <param name="Stereo">Even channels are echoed to each other if enabled.</param>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.#ctor(System.Single,System.Single,System.Single,System.Single,System.Boolean,Un4seen.Bass.AddOn.Fx.BASSFXChan)">
+            <summary>
+            Constructor already setting the members
+            </summary>
+            <param name="DryMix">Dry (unaffected) signal mix (-2..+2)</param>
+            <param name="WetMix">Wet (affected) signal mix (-2..+2)</param>
+            <param name="Delay">Delay in seconds (0&lt;..6)</param>
+            <param name="Feedback">Output signal to feed back into input (-1...+1).</param>
+            <param name="Stereo">Even channels are echoed to each other if enabled.</param>
+            <param name="chans">The channel control flag defining on which channels the effect should be applied to (a combinbation of <see cref="T:Un4seen.Bass.AddOn.Fx.BASSFXChan"/>).</param>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.Preset_SmallEcho">
+            <summary>
+            Sets the instance members to a preset.
+            </summary>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.Preset_DoubleKick">
+            <summary>
+            Sets the instance members to a preset.
+            </summary>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4.Preset_LongEcho">
+            <summary>
+            Sets the instance members to a preset.
+            </summary>
+        </member>
+        <member name="T:Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC">
             <summary>
             User defined callback function, to get the bpm detection process in percents.
             </summary>
-            <param name="channel">Channel that the <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC,System.IntPtr)"/> applies to.</param>
+            <param name="channel">Channel that the <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC,System.IntPtr)"/> applies to.</param>
             <param name="percent">The progress of the process in percent (0%..100%).</param>
-            <param name="user">The user instance data given when <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC,System.IntPtr)"/> was called.</param>
+            <param name="user">The user instance data given when <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC,System.IntPtr)"/> was called.</param>
             <remarks>
             <para>NOTE: When you pass an instance of a callback delegate to one of the BASS functions, this delegate object will not be reference counted. 
             This means .NET would not know, that it might still being used by BASS. The Garbage Collector might (re)move the delegate instance, if the variable holding the delegate is not declared as global.
@@ -7543,6 +7685,7 @@
             <item><term>BASS_STREAM_AUTOFREE</term><description>Automatically free the stream when it ends. This allows you to stream a file and forget about it, as BASS will automatically free the stream's resources when it has reached the end or when <see cref="M:Un4seen.Bass.Bass.BASS_ChannelStop(System.Int32)"/> (or <see cref="M:Un4seen.Bass.Bass.BASS_Stop"/>) is called.</description></item>
             <item><term>BASS_STREAM_DECODE</term><description>Decode the sample data, without outputting it. Use <see cref="M:Un4seen.Bass.Bass.BASS_ChannelGetData(System.Int32,System.IntPtr,System.Int32)"/> to retrieve decoded sample data. The BASS_SAMPLE_SOFTWARE, BASS_SAMPLE_3D, BASS_SAMPLE_FX, BASS_STREAM_AUTOFREE and SPEAKER flags can not be used together with this flag.</description></item>
             <item><term>BASS_SPEAKER_xxx</term><description><a href="../Overview.html#SpeakerAssignement">Speaker assignment flags</a>.</description></item>
+            <item><term>BASS_MIDI_NOCROP</term><description>Do not remove empty space (containing no events) from the end of the file.</description></item>
             <item><term>BASS_MIDI_DECAYEND</term><description>Let the ending decay naturally (including reverb), instead of stopping abruptly at the end of the file. This doesn't apply when looping. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_NOFX</term><description>Disable reverb and chorus processing, saving some CPU time. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_SINCINTER</term><description>Use sinc interpolated sample mixing. This increases the sound quality, but also requires more CPU. Otherwise linear interpolation is used.</description></item>
@@ -7612,6 +7755,7 @@
             <item><term>BASS_STREAM_AUTOFREE</term><description>Automatically free the stream when it ends. This allows you to stream a file and forget about it, as BASS will automatically free the stream's resources when it has reached the end or when <see cref="M:Un4seen.Bass.Bass.BASS_ChannelStop(System.Int32)"/> (or <see cref="M:Un4seen.Bass.Bass.BASS_Stop"/>) is called.</description></item>
             <item><term>BASS_STREAM_DECODE</term><description>Decode the sample data, without outputting it. Use <see cref="M:Un4seen.Bass.Bass.BASS_ChannelGetData(System.Int32,System.IntPtr,System.Int32)"/> to retrieve decoded sample data. The BASS_SAMPLE_SOFTWARE, BASS_SAMPLE_3D, BASS_SAMPLE_FX, BASS_STREAM_AUTOFREE and SPEAKER flags can not be used together with this flag.</description></item>
             <item><term>BASS_SPEAKER_xxx</term><description><a href="../Overview.html#SpeakerAssignement">Speaker assignment flags</a>.</description></item>
+            <item><term>BASS_MIDI_NOCROP</term><description>Do not remove empty space (containing no events) from the end of the file.</description></item>
             <item><term>BASS_MIDI_DECAYEND</term><description>Let the ending decay naturally (including reverb), instead of stopping abruptly at the end of the file. This doesn't apply when looping. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_NOFX</term><description>Disable reverb and chorus processing, saving some CPU time. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_SINCINTER</term><description>Use sinc interpolated sample mixing. This increases the sound quality, but also requires more CPU. Otherwise linear interpolation is used.</description></item>
@@ -7681,6 +7825,7 @@
             <item><term>BASS_STREAM_AUTOFREE</term><description>Automatically free the stream when it ends. This allows you to stream a file and forget about it, as BASS will automatically free the stream's resources when it has reached the end or when <see cref="M:Un4seen.Bass.Bass.BASS_ChannelStop(System.Int32)"/> (or <see cref="M:Un4seen.Bass.Bass.BASS_Stop"/>) is called.</description></item>
             <item><term>BASS_STREAM_DECODE</term><description>Decode the sample data, without outputting it. Use <see cref="M:Un4seen.Bass.Bass.BASS_ChannelGetData(System.Int32,System.IntPtr,System.Int32)"/> to retrieve decoded sample data. The BASS_SAMPLE_SOFTWARE, BASS_SAMPLE_3D, BASS_SAMPLE_FX, BASS_STREAM_AUTOFREE and SPEAKER flags can not be used together with this flag.</description></item>
             <item><term>BASS_SPEAKER_xxx</term><description><a href="../Overview.html#SpeakerAssignement">Speaker assignment flags</a>.</description></item>
+            <item><term>BASS_MIDI_NOCROP</term><description>Do not remove empty space (containing no events) from the end of the file.</description></item>
             <item><term>BASS_MIDI_DECAYEND</term><description>Let the ending decay naturally (including reverb), instead of stopping abruptly at the end of the file. This doesn't apply when looping. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_NOFX</term><description>Disable reverb and chorus processing, saving some CPU time. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_SINCINTER</term><description>Use sinc interpolated sample mixing. This increases the sound quality, but also requires more CPU. Otherwise linear interpolation is used.</description></item>
@@ -7735,6 +7880,7 @@
             <item><term>BASS_STREAM_AUTOFREE</term><description>Automatically free the stream when it ends. This allows you to stream a file and forget about it, as BASS will automatically free the stream's resources when it has reached the end or when <see cref="M:Un4seen.Bass.Bass.BASS_ChannelStop(System.Int32)"/> (or <see cref="M:Un4seen.Bass.Bass.BASS_Stop"/>) is called.</description></item>
             <item><term>BASS_STREAM_DECODE</term><description>Decode the sample data, without outputting it. Use <see cref="M:Un4seen.Bass.Bass.BASS_ChannelGetData(System.Int32,System.IntPtr,System.Int32)"/> to retrieve decoded sample data. The BASS_SAMPLE_SOFTWARE, BASS_SAMPLE_3D, BASS_SAMPLE_FX, BASS_STREAM_AUTOFREE and SPEAKER flags can not be used together with this flag.</description></item>
             <item><term>BASS_SPEAKER_xxx</term><description><a href="../Overview.html#SpeakerAssignement">Speaker assignment flags</a>.</description></item>
+            <item><term>BASS_MIDI_NOCROP</term><description>Do not remove empty space (containing no events) from the end of the file.</description></item>
             <item><term>BASS_MIDI_DECAYEND</term><description>Let the ending decay naturally (including reverb), instead of stopping abruptly at the end of the file. This doesn't apply when looping. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_NOFX</term><description>Disable reverb and chorus processing, saving some CPU time. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_SINCINTER</term><description>Use sinc interpolated sample mixing. This increases the sound quality, but also requires more CPU. Otherwise linear interpolation is used.</description></item>
@@ -7806,6 +7952,7 @@
             <item><term>BASS_STREAM_AUTOFREE</term><description>Automatically free the stream when it ends. This allows you to stream a file and forget about it, as BASS will automatically free the stream's resources when it has reached the end or when <see cref="M:Un4seen.Bass.Bass.BASS_ChannelStop(System.Int32)"/> (or <see cref="M:Un4seen.Bass.Bass.BASS_Stop"/>) is called.</description></item>
             <item><term>BASS_STREAM_DECODE</term><description>Decode the sample data, without outputting it. Use <see cref="M:Un4seen.Bass.Bass.BASS_ChannelGetData(System.Int32,System.IntPtr,System.Int32)"/> to retrieve decoded sample data. The BASS_SAMPLE_SOFTWARE, BASS_SAMPLE_3D, BASS_SAMPLE_FX, BASS_STREAM_AUTOFREE and SPEAKER flags can not be used together with this flag.</description></item>
             <item><term>BASS_SPEAKER_xxx</term><description><a href="../Overview.html#SpeakerAssignement">Speaker assignment flags</a>.</description></item>
+            <item><term>BASS_MIDI_NOCROP</term><description>Do not remove empty space (containing no events) from the end of the file.</description></item>
             <item><term>BASS_MIDI_DECAYEND</term><description>Let the ending decay naturally (including reverb), instead of stopping abruptly at the end of the file. This doesn't apply when looping. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_NOFX</term><description>Disable reverb and chorus processing, saving some CPU time. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>.</description></item>
             <item><term>BASS_MIDI_SINCINTER</term><description>Use sinc interpolated sample mixing. This increases the sound quality, but also requires more CPU. Otherwise linear interpolation is used.</description></item>
@@ -7902,12 +8049,15 @@
             <param name="handle">The MIDI stream to retrieve the marker from.</param>
             <param name="type">The type of marker to retrieve, one of the following (see <see cref="T:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker"/>):
             <list type="table">
+            <item><term>BASS_MIDI_MARK_COPY</term><description>Copyright notice events (MIDI meta event 2).</description></item>
             <item><term>BASS_MIDI_MARK_CUE</term><description>Cue events (MIDI meta event 07).</description></item>
+            <item><term>BASS_MIDI_MARK_INST</term><description>Instrument name events (MIDI meta event 4).</description></item>
             <item><term>BASS_MIDI_MARK_KEYSIG</term><description>Key signature events (MIDI meta event 89). The marker text is in the form of "a b", where a is the number of sharps (if positive) or flats (if negative), and b signifies major (if 0) or minor (if 1).</description></item>
             <item><term>BASS_MIDI_MARK_LYRIC</term><description>Lyric events (MIDI meta event 05).</description></item>
             <item><term>BASS_MIDI_MARK_MARKER</term><description>Marker events (MIDI meta event 06).</description></item>
             <item><term>BASS_MIDI_MARK_TEXT</term><description>Text events (MIDI meta event 01).</description></item>
             <item><term>BASS_MIDI_MARK_TIMESIG</term><description>Time signature events (MIDI meta event 88). The marker text is in the form of "a/b c d", where a is the numerator, b is the denominator, c is the metronome pulse, and d is the number of 32nd notes per MIDI quarter-note.</description></item>
+            <item><term>BASS_MIDI_MARK_TRACK</term><description>Track name events (MIDI meta event 3).</description></item>
             <item><term>BASS_MIDI_MARK_TICK</term><description>FLAG: get position in ticks instead of bytes.</description></item>
             </list>
             </param>
@@ -7922,8 +8072,8 @@
             <list type="table">
             <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
             <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
-            <item><term>BASS_ERROR_ILLTYPE</term><description><paramref name="type"/>type in not valid.</description></item>
-            <item><term>BASS_ERROR_ILLPARAM</term><description><paramref name="index"/>type in not valid.</description></item>
+            <item><term>BASS_ERROR_ILLTYPE</term><description><paramref name="type"/> is not valid.</description></item>
+            <item><term>BASS_ERROR_ILLPARAM</term><description><paramref name="index"/> is not valid.</description></item>
             </list>
             </para>
             </remarks>
@@ -7955,12 +8105,15 @@
             <param name="handle">The MIDI stream to retrieve the marker from.</param>
             <param name="type">The type of marker to retrieve, one of the following (see <see cref="T:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker"/>):
             <list type="table">
+            <item><term>BASS_MIDI_MARK_COPY</term><description>Copyright notice events (MIDI meta event 2).</description></item>
             <item><term>BASS_MIDI_MARK_CUE</term><description>Cue events (MIDI meta event 07).</description></item>
+            <item><term>BASS_MIDI_MARK_INST</term><description>Instrument name events (MIDI meta event 4).</description></item>
             <item><term>BASS_MIDI_MARK_KEYSIG</term><description>Key signature events (MIDI meta event 89). The marker text is in the form of "a b", where a is the number of sharps (if positive) or flats (if negative), and b signifies major (if 0) or minor (if 1).</description></item>
             <item><term>BASS_MIDI_MARK_LYRIC</term><description>Lyric events (MIDI meta event 05).</description></item>
             <item><term>BASS_MIDI_MARK_MARKER</term><description>Marker events (MIDI meta event 06).</description></item>
             <item><term>BASS_MIDI_MARK_TEXT</term><description>Text events (MIDI meta event 01).</description></item>
             <item><term>BASS_MIDI_MARK_TIMESIG</term><description>Time signature events (MIDI meta event 88). The marker text is in the form of "a/b c d", where a is the numerator, b is the denominator, c is the metronome pulse, and d is the number of 32nd notes per MIDI quarter-note.</description></item>
+            <item><term>BASS_MIDI_MARK_TRACK</term><description>Track name events (MIDI meta event 3).</description></item>
             <item><term>BASS_MIDI_MARK_TICK</term><description>FLAG: get position in ticks instead of bytes.</description></item>
             </list>
             </param>
@@ -7974,8 +8127,8 @@
             <list type="table">
             <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
             <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
-            <item><term>BASS_ERROR_ILLTYPE</term><description><paramref name="type"/>type in not valid.</description></item>
-            <item><term>BASS_ERROR_ILLPARAM</term><description><paramref name="index"/>type in not valid.</description></item>
+            <item><term>BASS_ERROR_ILLTYPE</term><description><paramref name="type"/> in not valid.</description></item>
+            <item><term>BASS_ERROR_ILLPARAM</term><description><paramref name="index"/> in not valid.</description></item>
             </list>
             </para>
             </remarks>
@@ -8003,6 +8156,83 @@
             End While
             </code>
             </example>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetMarksInternal(System.Int32,System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIMarker,Un4seen.Bass.AddOn.Midi.MIDI_MARK_INTERNAL[])">
+            <summary>
+            
+            </summary>
+            <param name="handle"></param>
+            <param name="track"></param>
+            <param name="type"></param>
+            <param name="marks"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetMarks(System.Int32,System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIMarker)">
+            <summary>
+            Retrieves the markers in a MIDI file stream.
+            </summary>
+            <param name="handle">The MIDI stream to retrieve the markers from.</param>
+            <param name="track">The track to get the markers from... 0 = 1st track, -1 = all tracks.</param>
+            <param name="type">The type of marker to retrieve, one of the following (see <see cref="T:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker"/>):
+            <list type="table">
+            <item><term>BASS_MIDI_MARK_COPY</term><description>Copyright notice events (MIDI meta event 2).</description></item>
+            <item><term>BASS_MIDI_MARK_CUE</term><description>Cue events (MIDI meta event 07).</description></item>
+            <item><term>BASS_MIDI_MARK_INST</term><description>Instrument name events (MIDI meta event 4).</description></item>
+            <item><term>BASS_MIDI_MARK_KEYSIG</term><description>Key signature events (MIDI meta event 89). The marker text is in the form of "a b", where a is the number of sharps (if positive) or flats (if negative), and b signifies major (if 0) or minor (if 1).</description></item>
+            <item><term>BASS_MIDI_MARK_LYRIC</term><description>Lyric events (MIDI meta event 05).</description></item>
+            <item><term>BASS_MIDI_MARK_MARKER</term><description>Marker events (MIDI meta event 06).</description></item>
+            <item><term>BASS_MIDI_MARK_TEXT</term><description>Text events (MIDI meta event 01).</description></item>
+            <item><term>BASS_MIDI_MARK_TIMESIG</term><description>Time signature events (MIDI meta event 88). The marker text is in the form of "a/b c d", where a is the numerator, b is the denominator, c is the metronome pulse, and d is the number of 32nd notes per MIDI quarter-note.</description></item>
+            <item><term>BASS_MIDI_MARK_TRACK</term><description>Track name events (MIDI meta event 3).</description></item>
+            <item><term>BASS_MIDI_MARK_TICK</term><description>FLAG: get position in ticks instead of bytes.</description></item>
+            </list>
+            </param>
+            <returns>On success, an array of <see cref="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_MARK"/> instances is returned, else <see langword="null"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>
+            <para>The markers are ordered chronologically, and by track number (lowest first) if multiple markers have the same position.</para>
+            <para>Syncs can be used to be informed of when markers are encountered during playback</para>
+            <para>If a lyric marker text begins with a / (slash) character, that means a new line should be started. If the text begins with a \ (backslash) character, the display should be cleared. Lyrics can sometimes be found in BASS_MIDI_MARK_TEXT instead of BASS_MIDI_MARK_LYRIC markers.</para>
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
+            <item><term>BASS_ERROR_ILLTYPE</term><description><paramref name="type"/> is not valid.</description></item>
+            <item><term>BASS_ERROR_ILLPARAM</term><description><paramref name="track"/> is not valid.</description></item>
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetMarksCount(System.Int32,System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIMarker)">
+            <summary>
+            Retrieves the number of markers in a MIDI file stream.
+            </summary>
+            <param name="handle">The MIDI stream to retrieve the markers from.</param>
+            <param name="track">The track to get the markers from... 0 = 1st track, -1 = all tracks.</param>
+            <param name="type">The type of marker to retrieve, one of the following (see <see cref="T:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker"/>):
+            <list type="table">
+            <item><term>BASS_MIDI_MARK_COPY</term><description>Copyright notice events (MIDI meta event 2).</description></item>
+            <item><term>BASS_MIDI_MARK_CUE</term><description>Cue events (MIDI meta event 07).</description></item>
+            <item><term>BASS_MIDI_MARK_INST</term><description>Instrument name events (MIDI meta event 4).</description></item>
+            <item><term>BASS_MIDI_MARK_KEYSIG</term><description>Key signature events (MIDI meta event 89). The marker text is in the form of "a b", where a is the number of sharps (if positive) or flats (if negative), and b signifies major (if 0) or minor (if 1).</description></item>
+            <item><term>BASS_MIDI_MARK_LYRIC</term><description>Lyric events (MIDI meta event 05).</description></item>
+            <item><term>BASS_MIDI_MARK_MARKER</term><description>Marker events (MIDI meta event 06).</description></item>
+            <item><term>BASS_MIDI_MARK_TEXT</term><description>Text events (MIDI meta event 01).</description></item>
+            <item><term>BASS_MIDI_MARK_TIMESIG</term><description>Time signature events (MIDI meta event 88). The marker text is in the form of "a/b c d", where a is the numerator, b is the denominator, c is the metronome pulse, and d is the number of 32nd notes per MIDI quarter-note.</description></item>
+            <item><term>BASS_MIDI_MARK_TRACK</term><description>Track name events (MIDI meta event 3).</description></item>
+            <item><term>BASS_MIDI_MARK_TICK</term><description>FLAG: get position in ticks instead of bytes.</description></item>
+            </list>
+            </param>
+            <returns>On success, the number of markers is returned, else -1 is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
+            <item><term>BASS_ERROR_ILLTYPE</term><description><paramref name="type"/> is not valid.</description></item>
+            <item><term>BASS_ERROR_ILLPARAM</term><description><paramref name="track"/> is not valid.</description></item>
+            </list>
+            </para>
+            </remarks>
         </member>
         <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvent(System.Int32,System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEvent,System.Int32)">
             <summary>
@@ -8093,7 +8323,7 @@
             </code>
             </example>
         </member>
-        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.MIDI_StreamCreateEventsBASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[])">
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[])">
             <summary>
             Applies any number of events to a MIDI stream (BASS_MIDI_EVENTS_STRUCT).
             </summary>
@@ -8283,8 +8513,9 @@
             <param name="fonts">The pointer to an array of <see cref="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONT"/> soundfonts to apply.</param>
             <param name="count">The number of elements in the fonts array.</param>
             <returns>If successful, <see langword="true"/> is returned, else <see langword="false"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
-            <remarks>Multiple soundfonts can be stacked, to provide different presets and banks, for example. When a preset is present in multiple soundfonts, the earlier soundfont in the array has priority. 
-            When a soundfont matching the MIDI file is loaded, that remains loaded when calling this function, and has priority over all other soundfonts.
+            <remarks>Multiple soundfonts can be stacked, each providing different presets, for example.
+            When a preset is present in multiple soundfonts, the earlier soundfont in the array has priority. When a soundfont matching the MIDI file is loaded, that remains loaded when calling this function, and has priority over all other soundfonts.
+            When a preset is not available on a non-0 bank in any soundfont, BASSMIDI will try to fall back to bank 0; first the LSB and then the MSB if still unsuccessful.
             <para>Changing the default configuration only affects subsequently created MIDI streams. Existing streams that are using the previous default configuration will continue to use that previous configuration.</para>
             <para>On Windows, the default default configuration will be to use the Creative 4MB (CT4MGM.SF2) or 2MB (CT2MGM.SF2) soundfont when present in the Windows system directory.</para>
             <para>
@@ -8311,6 +8542,77 @@
             Dim newFonts() As BASS_MIDI_FONT = {New BASS_MIDI_FONT(font1, -1, 0), New BASS_MIDI_FONT(font2, -1, 0)}
             ' now set them
             BassMidi.BASS_MIDI_StreamSetFonts(_stream, newFonts, newFonts.Length)
+            </code>
+            </example>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamSetFontsEx(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="handle"></param>
+            <param name="fonts"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamSetFonts(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX[],System.Int32)">
+            <summary>
+            Applies a soundfont configuration to a MIDI stream, or sets the default soundfont configuration.
+            </summary>
+            <param name="handle">The MIDI stream to apply the soundfonts to... 0 = set default soundfont configuration.</param>
+            <param name="fonts">The pointer to an array of <see cref="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX"/> soundfonts to apply.</param>
+            <param name="count">The number of elements in the fonts array.</param>
+            <returns>If successful, <see langword="true"/> is returned, else <see langword="false"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>Multiple soundfonts can be stacked, each providing different presets, for example.
+            When a preset is present in multiple soundfonts, the earlier soundfont in the array has priority. When a soundfont matching the MIDI file is loaded, that remains loaded when calling this function, and has priority over all other soundfonts.
+            When a preset is not available on a non-0 bank in any soundfont, BASSMIDI will try to fall back to bank 0; first the LSB and then the MSB if still unsuccessful.
+            <para>Changing the default configuration only affects subsequently created MIDI streams. Existing streams that are using the previous default configuration will continue to use that previous configuration.</para>
+            <para>On Windows, the default default configuration will be to use the Creative 4MB (CT4MGM.SF2) or 2MB (CT2MGM.SF2) soundfont when present in the Windows system directory.</para>
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
+            <item><term>BASS_ERROR_ILLPARAM</term><description>Something in the <paramref name="fonts"/> array is invalid, check the soundfont handles.</description></item>
+            </list>
+            </para>
+            </remarks>
+            <example>
+            Set a MIDI stream to use preset 20 from one soundfont for program 10 on bank 0, and all available presets from another soundfont:
+            <code>
+            int font1 = BassMidi.BASS_MIDI_FontInit("afont.sf2");
+            int font2 = BassMidi.BASS_MIDI_FontInit("bfont.sf2");
+            BASS_MIDI_FONTEX[] fonts = new BASS_MIDI_FONTEX[2];
+            fonts[0].font = font1;
+            fonts[0].spreset = 10; // soundfont preset 20
+            fonts[0].sbank = 0; // soundfont bank 0
+            fonts[0].dpreset = 10; // destination preset 10
+            fonts[0].dbank = 0; // destination bank 0
+            fonts[0].dbanklsb = 0; // destination bank LSB 0
+            fonts[1].font = font2;
+            fonts[1].spreset = -1; // all presets
+            fonts[1].sbank = -1; // all banks
+            fonts[1].dpreset = -1; // all presets
+            fonts[1].dbank = 0; // default banks
+            fonts[1].dbanklsb = 0; // destination bank LSB 0
+            BASS_MIDI_StreamSetFonts(handle, fonts, 2); // apply it to the stream
+            </code>
+            <code lang="vbnet">
+            ' first initialize the fonts
+            Dim font1 As Integer =  BassMidi.BASS_MIDI_FontInit("afont.sf2") 
+            Dim font2 As Integer =  BassMidi.BASS_MIDI_FontInit("bfont.sf2") 
+            Dim fonts As BASS_MIDI_FONTEX() = New BASS_MIDI_FONTEX(1) {}
+            fonts(0).font = font1
+            fonts(0).spreset = 10 ' soundfont preset 20
+            fonts(0).sbank = 0 ' soundfont bank 0
+            fonts(0).dpreset = 10 ' destination preset 10
+            fonts(0).dbank = 0 ' destination bank 0
+            fonts(0).dbanklsb = 0 ' destination bank LSB 0
+            fonts(1).font = font2
+            fonts(1).spreset = -1 ' all presets
+            fonts(1).sbank = -1 ' all banks
+            fonts(1).dpreset = -1 ' all presets
+            fonts(1).dbank = 0 ' default banks
+            fonts(1).dbanklsb = 0 ' destination bank LSB 0
+            BASS_MIDI_StreamSetFonts(handle, fonts, 2) ' apply it to the stream
             </code>
             </example>
         </member>
@@ -8363,6 +8665,67 @@
             </code>
             <code lang="vbnet">
             Dim fonts As BASS_MIDI_FONT() = BassMidi.BASS_MIDI_StreamGetFonts(_stream)
+            </code>
+            </example>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetFontsEx(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="handle"></param>
+            <param name="fonts"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetFonts(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX[],System.Int32)">
+            <summary>
+            Retrieves the soundfont configuration of a MIDI stream, or the default soundfont configuration.
+            </summary>
+            <param name="handle">The MIDI stream to retrieve the soundfont configuration of... 0 = get default soundfont configuration.</param>
+            <param name="fonts">An array to retrieve the soundfont configuration.</param>
+            <param name="count">The maximum number of elements to retrieve in the fonts array. This and fonts can be 0, to get the number of elements in the soundfont configuration.</param>
+            <returns>If successful, the number of soundfonts in the configuration (which can be higher than count) is returned, else -1 is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>When a soundfont matching the MIDI file is loaded, it will be the first element in the returned configuration.
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
+            </list>
+            </para>
+            </remarks>
+            <example>
+            <code>
+            int fontCount = BassMidi.BASS_MIDI_StreamGetFontsCount(_stream);
+            BASS_MIDI_FONTEX[] fonts = new BASS_MIDI_FONTEX[fontCount];
+            int count = BassMidi.BASS_MIDI_StreamGetFonts(_stream, fonts, fontCount);
+            </code>
+            <code lang="vbnet">
+            Dim fontCount As Integer = BassMidi.BASS_MIDI_StreamGetFontsCount(_stream)
+            Dim fonts(fontCount) As BASS_MIDI_FONTEX
+            Dim count As Integer = BassMidi.BASS_MIDI_StreamGetFonts(_stream, fonts, fontCount)
+            </code>
+            </example>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetFontsEx(System.Int32)">
+            <summary>
+            Retrieves the soundfont configuration of a MIDI stream, or the default soundfont configuration.
+            </summary>
+            <param name="handle">The MIDI stream to retrieve the soundfont configuration of... 0 = get default soundfont configuration.</param>
+            <returns>An array of <see cref="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX"/> configuration entries if successfull - or <see langword="null"/> on error.</returns>
+            <remarks>This overload will always return all used soundfont configuration objects.
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
+            </list>
+            </para>
+            </remarks>
+            <example>
+            <code>
+            BASS_MIDI_FONTEX[] fonts = BassMidi.BASS_MIDI_StreamGetFontsEx(_stream);
+            </code>
+            <code lang="vbnet">
+            Dim fonts As BASS_MIDI_FONTEX() = BassMidi.BASS_MIDI_StreamGetFontsEx(_stream)
             </code>
             </example>
         </member>
@@ -8502,6 +8865,67 @@
             </code>
             </example>
         </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontInit(System.String)">
+            <summary>
+            Initializes a soundfont from a file (unicode).
+            </summary>
+            <param name="file">The file name of the sound font (e.g. an .sf2 file).</param>
+            <returns>If successful, the soundfont's handle is returned, else 0 is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>The BASS_UNICODE flag is applied automatically here.
+            <para>BASSMIDI uses SF2 soundfonts to provide the sounds to use in the rendering of MIDI files. Several SF2 soundfonts can be found on the internet, including one (Chorium) on the BASS website.</para>
+            <para>A soundfont needs to be initialized before it can be used to render MIDI streams. Once initialized, a soundfont can be assigned to MIDI streams using the <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamSetFonts(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONT[],System.Int32)"/> function. A single soundfont can be shared by multiple MIDI streams.</para>
+            <para>Information on the initialized soundfont can be retrieved using <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontGetInfo(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTINFO)"/>.</para>
+            <para>If a soundfont is initialized multiple times, each instance will have its own handle but share the same sample/etc data.</para>
+            <para><b>Platform-specific</b></para>
+            <para>The BASS_MIDI_FONT_MMAP option is not available on big-endian systems (eg. PowerPC) as a soundfont's little-endian sample data cannot be played directly from a mapping; its byte order needs to be reversed.</para>
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_FILEOPEN</term><description>The <paramref name="file"/> could not be opened.</description></item>
+            <item><term>BASS_ERROR_FILEFORM</term><description>The file's format is not recognised/supported.</description></item>
+            </list>
+            </para>
+            </remarks>
+            <example>
+            <code>
+            // first initialize the fonts
+            int font1 = BassMidi.BASS_MIDI_FontInit("afont.sf2");
+            int font2 = BassMidi.BASS_MIDI_FontInit("bfont.sf2");
+            BASS_MIDI_FONT[] newfonts = new BASS_MIDI_FONT[2];
+            newfonts[0] = new BASS_MIDI_FONT(font1, 10, 0);
+            newfonts[1] = new BASS_MIDI_FONT(font2, -1, 0);
+            // now set them
+            BassMidi.BASS_MIDI_StreamSetFonts(_stream, newfonts, 2);
+            </code>
+            <code lang="vbnet">
+            ' first initialize the fonts
+            Dim font1 As Integer = BassMidi.BASS_MIDI_FontInit("afont.sf2")
+            Dim font2 As Integer = BassMidi.BASS_MIDI_FontInit("bfont.sf2")
+            Dim newfonts(2) As BASS_MIDI_FONT
+            newfonts(0) = New BASS_MIDI_FONT(font1, 10, 0)
+            newfonts(1) = New BASS_MIDI_FONT(font2, -1, 0)
+            BassMidi.BASS_MIDI_StreamSetFonts(_stream, newfonts, 2)
+            </code>
+            </example>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontInitUser(Un4seen.Bass.BASS_FILEPROCS,System.IntPtr,Un4seen.Bass.BASSFlag)">
+            <summary>
+            Initializes a soundfont via user callback functions.
+            </summary>
+            <param name="procs">The user defined file function (see <see cref="T:Un4seen.Bass.BASS_FILEPROCS"/>).</param>
+            <param name="user">User instance data to pass to the callback functions.</param>
+            <param name="flags">Unused.</param>
+            <returns>If successful, the soundfont's handle is returned, else 0 is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>
+            <para>The unbuffered file system (STREAMFILE_NOBUFFER) is always used by this function.</para>
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_FILEFORM</term><description>The file's format is not recognised/supported.</description></item>
+            </list>
+            </para>
+            </remarks>
+        </member>
         <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontGetInfo(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTINFO)">
             <summary>
             Retrieves information on a soundfont.
@@ -8577,7 +9001,7 @@
             </para>
             </remarks>
         </member>
-        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontPack(System.Int32,System.String,System.String,Un4seen.Bass.BASSFlag)">
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontPackUnicode(System.Int32,System.String,System.String,Un4seen.Bass.BASSFlag)">
             <summary>
             
             </summary>
@@ -8587,7 +9011,7 @@
             <param name="flags"></param>
             <returns></returns>
         </member>
-        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontPack(System.Int32,System.String,System.String)">
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontPack(System.Int32,System.String,System.String,Un4seen.Bass.BASSFlag)">
             <summary>
             Produces a compressed version of a soundfont.
             <para>Unicode version only here (BASS_UNICODE will be used automatically).</para>
@@ -8595,6 +9019,11 @@
             <param name="handle">The soundfont to pack.</param>
             <param name="outfile">Filename for the packed soundfont.</param>
             <param name="encoder">Encoder command-line (e.g. as returned by <see cref="P:Un4seen.Bass.Misc.IBaseEncoder.EncoderCommandLine"/>).</param>
+            <param name="flags">Any combination of these flags (see <see cref="T:Un4seen.Bass.BASSFlag"/>):
+            <list type="table">
+            <item><term>BASS_MIDI_PACK_NOHEAD</term><description>Don't send a WAVE header to the encoder. If this flag is used then the sample format (mono 16-bit) must be passed to the encoder some other way, eg. via the command-line.</description></item>
+            </list>
+            </param>
             <returns>If successful, the <see langword="true"/> is returned, else <see langword="false"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
             <remarks>Standard soundfonts use PCM samples, so they can be quite large, which can be a problem if they're to be distributed. 
             To reduce the size, BASSMIDI can compress the samples using any command-line encoder with STDIN and STDOUT support. 
@@ -8773,6 +9202,45 @@
             </para>
             </remarks>
         </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontGetPresets(System.Int32,System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="handle"></param>
+            <param name="presets"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontGetPresets(System.Int32)">
+            <summary>
+            Retrieves the presets in a soundfont.
+            </summary>
+            <param name="handle">The soundfont handle to get the preset name from.</param>
+            <returns>If successful, an array of presets is returned, else <see langword="null"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>
+            <para>The presets are delivered with the preset number in the LOWORD and the bank number in the HIWORD, and in numerically ascending order.</para>
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontGetPresetFonts(System.Int32)">
+            <summary>
+            Retrieves the presets in a soundfont.
+            </summary>
+            <param name="handle">The soundfont handle to get the preset name from.</param>
+            <returns>If successful, an array of <see cref="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONT"/> instances is returned, else <see langword="null"/> is returned. Use <see cref="M:Un4seen.Bass.Bass.BASS_ErrorGetCode"/> to get the error code.</returns>
+            <remarks>
+            <para>
+            <list type="table">
+            <listheader><term><see cref="T:Un4seen.Bass.BASSError">ERROR CODE</see></term><description>Description</description></listheader>
+            <item><term>BASS_ERROR_HANDLE</term><description><paramref name="handle"/> is not valid.</description></item>
+            </list>
+            </para>
+            </remarks>
+        </member>
         <member name="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontSetVolume(System.Int32,System.Single)">
             <summary>
             Sets a soundfont's volume level.
@@ -8824,22 +9292,22 @@
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_MARKER">
             <summary>
-            Marker events.
+            Marker events (MIDI meta event 6).
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_CUE">
             <summary>
-            Cue events.
+            Cue events (MIDI meta event 7).
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_LYRIC">
             <summary>
-            Lyric events.
+            Lyric events (MIDI meta event 5).
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_TEXT">
             <summary>
-            Text events.
+            Text events (MIDI meta event 1).
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_TIMESIG">
@@ -8850,8 +9318,23 @@
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_KEYSIG">
             <summary>
-            Key signature event.
+            Key signature events (MIDI meta event 89).
             <para>That gives the key signature (in BASS_MIDI_MARK.text) in the form of "a b", where "a" is the number of sharps (if positive) or flats (if negative) and "b" signifies major (if 0) or minor (if 1).</para>
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_COPY">
+            <summary>
+            Copyright notice (MIDI meta event 2).
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_TRACK">
+            <summary>
+            Track name events (MIDI meta event 3).
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_INST">
+            <summary>
+            Instrument name events (MIDI meta event 4). 
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIMarker.BASS_MIDI_MARK_TICK">
@@ -9289,7 +9772,7 @@
         </member>
         <member name="T:Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode">
             <summary>
-            The type of event data to apply, to be used with <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,System.Int32,System.Byte[])"/>.
+            The type of event data to apply, to be used with <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[])"/>.
             </summary>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode.BASS_MIDI_EVENTS_STRUCT">
@@ -9399,6 +9882,63 @@
             </summary>
             <returns>The description string of the soundfont configuration object.</returns>
         </member>
+        <member name="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX">
+            <summary>
+            Used with <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamSetFonts(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONT[],System.Int32)"/> and <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetFonts(System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONT[],System.Int32)"/> to set and retrieve soundfont configurations.
+            </summary>
+            <remarks>This is an extended version of the <see cref="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONT"/> structure that allows more flexible mapping of soundfont presets to MIDI programs, including access to the bank LSB (eg. MIDI controller 32).
+            <para>When using an individual preset from a soundfont, BASSMIDI will first look for the exact <i>spreset</i> and <i>sbank</i> match, but if that is not present, the first preset from the soundfont will be used. This is useful for single preset soundfonts.</para>
+            <para>When using all presets from all banks in a soundfont, the <i>dbank</i> member is a base number that is added to the soundfont's banks. For example, if <i>dbank</i> = 1 then the soundfont's bank 0 becomes bank 1, etc. Negative base numbers are allowed, to lower a soundfont's bank numbers</para>
+            <para>The bank LSB raises the maximum number of melodic banks from 128 to 16384 (128 x 128), but the SF2 soundfont format only supports 128 banks, so a soundfont that is set to be used on all banks (<i>dpreset</i> and <i>dbank</i> are -1) will still only apply to the single bank LSB specified by <i>dbanklsb</i>.</para>
+            </remarks>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.font">
+            <summary>
+            Soundfont handle, previously inititialized with <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_FontInit(System.String,Un4seen.Bass.BASSFlag)"/>.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.spreset">
+            <summary>
+            Soundfont preset number... -1 = use all presets.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.sbank">
+            <summary>
+            Soundfont bank number... -1 = use all banks.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.dpreset">
+            <summary>
+            Destination preset/program number... -1 = all presets. This determines what MIDI_EVENT_PROGRAM event value(s) the soundfont is used for.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.dbank">
+            <summary>
+            Destination bank number, or a base bank number when using all presets from all banks. This determines what MIDI_EVENT_BANK event value(s) the soundfont is used for.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.dbanklsb">
+            <summary>
+            Destination bank number LSB. This is the MIDI_EVENT_BANK_LSB event value that the soundfont is used for.
+            </summary>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor already setting the members.
+            </summary>
+            <param name="Font">The soundfont handle to use.</param>
+            <param name="SPreset">Soundfont preset number... -1 = use all presets.</param>
+            <param name="SBank">Soundfont bank number... -1 = use all banks.</param>
+            <param name="DPreset">Destination preset/program number... -1 = all presets. This determines what MIDI_EVENT_PROGRAM event value(s) the soundfont is used for.</param>
+            <param name="DBank">Destination bank number, or a base bank number when using all presets from all banks. This determines what MIDI_EVENT_BANK event value(s) the soundfont is used for.</param>
+            <param name="DBanklsb">Destination bank number LSB. This is the MIDI_EVENT_BANK_LSB event value that the soundfont is used for.</param>
+        </member>
+        <member name="M:Un4seen.Bass.AddOn.Midi.BASS_MIDI_FONTEX.ToString">
+            <summary>
+            A description of the soundfont configuration object (font, preset, bank)
+            </summary>
+            <returns>The description string of the soundfont configuration object.</returns>
+        </member>
         <member name="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_MARK">
             <summary>
             Used with <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetMark(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIMarker,System.Int32,Un4seen.Bass.AddOn.Midi.BASS_MIDI_MARK)"/>, <see cref="F:Un4seen.Bass.BASSSync.BASS_SYNC_MIDI_LYRIC"/>, <see cref="F:Un4seen.Bass.BASSSync.BASS_SYNC_MIDI_CUE"/> and <see cref="F:Un4seen.Bass.BASSSync.BASS_SYNC_MIDI_MARKER"/> to retrieve markers.
@@ -9445,12 +9985,12 @@
         </member>
         <member name="T:Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT">
             <summary>
-            Used with <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,System.Int32,System.Byte[])"/> to apply events 
+            Used with <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[])"/> to apply events 
             and <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamGetEvents(System.Int32,System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEvent,Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[])"/> to retrieve events, 
             and <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamCreateEvents(Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[],System.Int32,Un4seen.Bass.BASSFlag,System.Int32)"/> to play event sequences.
             </summary>
             <remarks>
-            The tick and pos members are ignored by <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,System.Int32,System.Byte[])"/>. pos is also ignored by <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamCreateEvents(Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[],System.Int32,Un4seen.Bass.BASSFlag,System.Int32)"/>.
+            The tick and pos members are ignored by <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamEvents(System.Int32,Un4seen.Bass.AddOn.Midi.BASSMIDIEventMode,Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[])"/>. pos is also ignored by <see cref="M:Un4seen.Bass.AddOn.Midi.BassMidi.BASS_MIDI_StreamCreateEvents(Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT[],System.Int32,Un4seen.Bass.BASSFlag,System.Int32)"/>.
             </remarks>
         </member>
         <member name="F:Un4seen.Bass.AddOn.Midi.BASS_MIDI_EVENT.eventtype">
@@ -18923,23 +19463,18 @@
             <i>Other effects may be supported by add-ons, e.g. <see cref="N:Un4seen.Bass.AddOn.Fx">BASS_FX</see>:</i>
             <list type="table">
             <item><term>BASS_FX_BFX_MIX</term><description>BASS_FX Channel Swap/Remap/Downmix. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_MIX"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_ROTATE</term><description>BASS_FX Channel Rotate. No parameters.</description></item>
-            <item><term>BASS_FX_BFX_ECHO</term><description>BASS_FX Echo. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_FLANGER</term><description>BASS_FX Flanger. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_FLANGER"/> structure to set/get parameters.</description></item>
+            <item><term>BASS_FX_BFX_ROTATE</term><description>BASS_FX Channel Rotate. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_VOLUME</term><description>BASS_FX Volume. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_PEAKEQ</term><description>BASS_FX Peaking Equalizer. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PEAKEQ"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_REVERB</term><description>BASS_FX Reverb. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_REVERB"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_LPF</term><description>BASS_FX Low Pass Filter. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_LPF"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_DAMP</term><description>BASS_FX Dynamic Amplification. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DAMP"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_AUTOWAH</term><description>BASS_FX Auto Wah. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_AUTOWAH"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_ECHO2</term><description>BASS_FX Echo 2. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO2"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_PHASER</term><description>BASS_FX Phaser. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PHASER"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_ECHO3</term><description>BASS_FX Echo 3. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO3"/> structure to set/get parameters.</description></item>
+            <item><term>BASS_FX_BFX_ECHO4</term><description>BASS_FX Echo 3. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO3"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_CHORUS</term><description>BASS_FX Chorus. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_CHORUS"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_APF</term><description>BASS_FX All Pass Filter. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_APF"/> structure to set/get parameters.</description></item>
-            <item><term>BASS_FX_BFX_COMPRESSOR</term><description>BASS_FX Compressor. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR"/> structure to set/get parameters.</description></item>
+            <item><term>BASS_FX_BFX_BQF</term><description>BASS_FX BiQuad Filter. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_BQF"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_DISTORTION</term><description>BASS_FX Distortion. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DISTORTION"/> structure to set/get parameters.</description></item>
             <item><term>BASS_FX_BFX_COMPRESSOR2</term><description>BASS_FX Compressor. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR2"/> structure to set/get parameters.</description></item>
+            <item><term>BASS_FX_BFX_VOLUME_ENV</term><description>BASS_FX volume envelope effect. Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME_ENV"/> structure to set/get parameters.</description></item>
             </list>
             </param>
             <param name="priority">The priority of the new FX, which determines it's position in the DSP chain - DSP/FX with higher priority are applied before those with lower. This parameter has no effect with DX8 effects when the "with FX flag" <a href="../Overview.html#DX8DMOEffects">DX8 effect implementation</a> is used.</param>
@@ -20968,7 +21503,7 @@
             <remarks>
              The structure used depends on the effect type.
             <para>For DX8 effects you might use: <see cref="T:Un4seen.Bass.BASS_DX8_CHORUS"/>, <see cref="T:Un4seen.Bass.BASS_DX8_COMPRESSOR"/>, <see cref="T:Un4seen.Bass.BASS_DX8_DISTORTION"/>, <see cref="T:Un4seen.Bass.BASS_DX8_ECHO"/>, <see cref="T:Un4seen.Bass.BASS_DX8_FLANGER"/>, <see cref="T:Un4seen.Bass.BASS_DX8_GARGLE"/>, <see cref="T:Un4seen.Bass.BASS_DX8_I3DL2REVERB"/>, <see cref="T:Un4seen.Bass.BASS_DX8_PARAMEQ"/>, <see cref="T:Un4seen.Bass.BASS_DX8_REVERB"/>.</para>
-            <para>For BASS_FX DSP effetcs you might use: <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_REVERB"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PHASER"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PEAKEQ"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_LPF"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_FLANGER"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO3"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO2"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DISTORTION"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DAMP"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_CHORUS"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_AUTOWAH"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_APF"/>.</para>
+            <para>For BASS_FX DSP effetcs you might use: <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PHASER"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PEAKEQ"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DISTORTION"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DAMP"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR2"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_CHORUS"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_AUTOWAH"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_BQF"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_MIX"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME_ENV"/>.</para>
             <para>Use <see cref="M:Un4seen.Bass.Bass.BASS_ChannelSetFX(System.Int32,Un4seen.Bass.BASSFXType,System.Int32)"/> to add an effect DSP to a channel at anay time and <see cref="M:Un4seen.Bass.Bass.BASS_ChannelRemoveFX(System.Int32,System.Int32)"/> to remove an effect from the channel.</para>
             <para>
             <list type="table">
@@ -21024,7 +21559,7 @@
             <remarks>
              The structure used depends on the effect type.
             <para>For DX8 effects you might use: <see cref="T:Un4seen.Bass.BASS_DX8_CHORUS"/>, <see cref="T:Un4seen.Bass.BASS_DX8_COMPRESSOR"/>, <see cref="T:Un4seen.Bass.BASS_DX8_DISTORTION"/>, <see cref="T:Un4seen.Bass.BASS_DX8_ECHO"/>, <see cref="T:Un4seen.Bass.BASS_DX8_FLANGER"/>, <see cref="T:Un4seen.Bass.BASS_DX8_GARGLE"/>, <see cref="T:Un4seen.Bass.BASS_DX8_I3DL2REVERB"/>, <see cref="T:Un4seen.Bass.BASS_DX8_PARAMEQ"/>, <see cref="T:Un4seen.Bass.BASS_DX8_REVERB"/>.</para>
-            <para>For BASS_FX DSP effetcs you might use: <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_REVERB"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PHASER"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PEAKEQ"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_LPF"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_FLANGER"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO3"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO2"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DISTORTION"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DAMP"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR2"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_CHORUS"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_AUTOWAH"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_APF"/>.</para>
+            <para>For BASS_FX DSP effetcs you might use: <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PHASER"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_PEAKEQ"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DISTORTION"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_DAMP"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_COMPRESSOR2"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_CHORUS"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_AUTOWAH"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_BQF"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_MIX"/>, <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_VOLUME_ENV"/>.</para>
             <para>Use <see cref="M:Un4seen.Bass.Bass.BASS_ChannelSetFX(System.Int32,Un4seen.Bass.BASSFXType,System.Int32)"/> to add an effect DSP to a channel at anay time and <see cref="M:Un4seen.Bass.Bass.BASS_ChannelRemoveFX(System.Int32,System.Int32)"/> to remove an effect from the channel.</para>
             <para>
             <list type="table">
@@ -21359,16 +21894,6 @@
         <member name="F:Un4seen.Bass.BASSError.BASS_VST_ERROR_NOREALTIME">
             <summary>
             BassVst: the given effect does not support realtime processing
-            </summary>
-        </member>
-        <member name="F:Un4seen.Bass.BASSError.BASS_FX_ERROR_NODECODE">
-            <summary>
-            BassFx: Not a decoding channel
-            </summary>
-        </member>
-        <member name="F:Un4seen.Bass.BASSError.BASS_FX_ERROR_BPMINUSE">
-            <summary>
-            BassFx: BPM detection is in use
             </summary>
         </member>
         <member name="F:Un4seen.Bass.BASSError.BASS_ERROR_VIDEO_ABORT">
@@ -21907,6 +22432,13 @@
             <para>limit (int): The async encoder queue size limit in milliseconds; 0=unlimited.</para>
             <para>When queued encoding is enabled, the queue's buffer will grow as needed to hold the queued data, up to a limit specified by this config option.
             The default limit is 10 seconds (10000 milliseconds). Changes only apply to new encoders, not any already existing encoders.</para>
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.BASSConfig.BASS_CONFIG_ENCODE_ACM_LOAD">
+            <summary>
+            BASSenc add-on: ACM codec name to give priority for the formats it supports.
+            <para>codec (string pointer): The ACM codec name to give priority (e.g. 'l3codecp.acm').</para>
+            <para>BASSenc does make a copy of the config string, so it can be freed right after calling it.</para>
             </summary>
         </member>
         <member name="F:Un4seen.Bass.BASSConfig.BASS_CONFIG_ENCODE_CAST_TIMEOUT">
@@ -22463,7 +22995,7 @@
             Stream/Sample/Music/Recording/BASS_FX create flags to be used with <see cref="M:Un4seen.Bass.Bass.BASS_StreamCreate(System.Int32,System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.STREAMPROC,System.IntPtr)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_StreamCreateFile(System.String,System.Int64,System.Int64,Un4seen.Bass.BASSFlag)"/>,
             <see cref="M:Un4seen.Bass.Bass.BASS_StreamCreateFileUser(Un4seen.Bass.BASSStreamSystem,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASS_FILEPROCS,System.IntPtr)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_StreamCreateURL(System.String,System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.DOWNLOADPROC,System.IntPtr)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_SampleCreate(System.Int32,System.Int32,System.Int32,System.Int32,Un4seen.Bass.BASSFlag)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_SampleLoad(System.String,System.Int64,System.Int32,System.Int32,Un4seen.Bass.BASSFlag)"/>, <see cref="T:Un4seen.Bass.BASS_SAMPLE"/>,
             <see cref="M:Un4seen.Bass.Bass.BASS_MusicLoad(System.String,System.Int64,System.Int32,Un4seen.Bass.BASSFlag,System.Int32)"/>, <see cref="M:Un4seen.Bass.Bass.BASS_RecordStart(System.Int32,System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.RECORDPROC,System.IntPtr)"/> and 
-            <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_TempoCreate(System.Int32,Un4seen.Bass.BASSFlag)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_ReverseCreate(System.Int32,System.Single,Un4seen.Bass.BASSFlag)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROCESSPROC,System.IntPtr)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_CallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMPROC,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,System.IntPtr)"/> etc.
+            <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_TempoCreate(System.Int32,Un4seen.Bass.BASSFlag)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_ReverseCreate(System.Int32,System.Single,Un4seen.Bass.BASSFlag)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_DecodeGet(System.Int32,System.Double,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,Un4seen.Bass.AddOn.Fx.BPMPROGRESSPROC,System.IntPtr)"/>, <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_BPM_CallbackSet(System.Int32,Un4seen.Bass.AddOn.Fx.BPMPROC,System.Double,System.Int32,Un4seen.Bass.AddOn.Fx.BASSFXBpm,System.IntPtr)"/> etc.
             </summary>
         </member>
         <member name="F:Un4seen.Bass.BASSFlag.BASS_DEFAULT">
@@ -22858,6 +23390,11 @@
             BASSMIDI add-on: Let the old sound decay naturally (including reverb) when changing the position, including looping. This flag can be toggled at any time using <see cref="M:Un4seen.Bass.Bass.BASS_ChannelFlags(System.Int32,Un4seen.Bass.BASSFlag,Un4seen.Bass.BASSFlag)"/>, and can also be used in <see cref="M:Un4seen.Bass.Bass.BASS_ChannelSetPosition(System.Int32,System.Int64,Un4seen.Bass.BASSMode)"/> calls to have it apply to particular position changes.
             </summary>
         </member>
+        <member name="F:Un4seen.Bass.BASSFlag.BASS_MIDI_NOCROP">
+            <summary>
+            BASSMIDI add-on: Do not remove empty space (containing no events) from the end of the file.
+            </summary>
+        </member>
         <member name="F:Un4seen.Bass.BASSFlag.BASS_MIDI_SINCINTER">
             <summary>
             BASSMIDI add-on: Use sinc interpolated sample mixing. This increases the sound quality, but also requires more CPU. Otherwise linear interpolation is used.
@@ -22866,6 +23403,11 @@
         <member name="F:Un4seen.Bass.BASSFlag.BASS_MIDI_FONT_MMAP">
             <summary>
             BASSMIDI add-on: Map the file into memory. This flag is ignored if the soundfont is packed as the sample data cannot be played directly from a mapping; it needs to be decoded. This flag is also ignored if the file is too large to be mapped into memory.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.BASSFlag.BASS_MIDI_PACK_NOHEAD">
+            <summary>
+            BASSMIDI add-on: Don't send a WAVE header to the encoder. If this flag is used then the sample format (mono 16-bit) must be passed to the encoder some other way, eg. via the command-line.
             </summary>
         </member>
         <member name="F:Un4seen.Bass.BASSFlag.BASS_FX_FREESOURCE">
@@ -23857,6 +24399,7 @@
             <summary>
             BASS_FX Tempo Option: Use FIR low-pass (anti-alias) filter (gain speed, lose quality)? <see langword="true"/>=1 (default), <see langword="false"/>=0.
             <para>See <see cref="M:Un4seen.Bass.AddOn.Fx.BassFx.BASS_FX_TempoCreate(System.Int32,Un4seen.Bass.BASSFlag)"/> for details.</para>
+            <para>On iOS, Android, WinCE and Linux ARM platforms this is by default disabled for lower CPU usage.</para>
             </summary>
         </member>
         <member name="F:Un4seen.Bass.BASSAttribute.BASS_ATTRIB_TEMPO_OPTION_AA_FILTER_LENGTH">
@@ -24321,7 +24864,7 @@
         </member>
         <member name="F:Un4seen.Bass.BASSFXType.BASS_FX_BFX_ROTATE">
             <summary>
-            BASS_FX Channel Volume Ping-Pong (stereo channel only). No parameters to get or set.
+            BASS_FX Channel Volume Ping-Pong (multi channel). Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ROTATE"/> structure to set/get parameters.
             </summary>
         </member>
         <member name="F:Un4seen.Bass.BASSFXType.BASS_FX_BFX_ECHO">
@@ -24417,6 +24960,11 @@
         <member name="F:Un4seen.Bass.BASSFXType.BASS_FX_BFX_BQF">
             <summary>
             BASS_FX BiQuad filters (multi channel). Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_BQF"/> structure to set/get parameters.
+            </summary>
+        </member>
+        <member name="F:Un4seen.Bass.BASSFXType.BASS_FX_BFX_ECHO4">
+            <summary>
+            BASS_FX Echo/Reverb 4 (multi channel). Use <see cref="T:Un4seen.Bass.AddOn.Fx.BASS_BFX_ECHO4"/> structure to set/get parameters.
             </summary>
         </member>
         <member name="T:Un4seen.Bass.BASSFXPhase">
