@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v2.4.4.4
+      - updated package
   - v2.4.4.2
       - Initial package release
 

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>bass.aac</id>
-        <version>2.4.4.2</version>
+        <version>2.4.4.4</version>
         <title>BASS AAC Addon (bass_aac.dll)</title>
         <authors>un4seen Developments</authors>
         <owners>chefkoch</owners>
