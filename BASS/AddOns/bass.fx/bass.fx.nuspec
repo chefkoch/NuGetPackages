@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>bass.fx</id>
-        <version>2.4.9</version>
+        <version>2.4.10.1</version>
         <title>BASS FX Addon (bass_fx.dll)</title>
         <authors>un4seen Developments</authors>
         <owners>chefkoch</owners>
