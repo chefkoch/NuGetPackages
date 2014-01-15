@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v2.4.1.3
+      - updated to bassopus.dll v2.4.1.3
   - v2.4.1.1
       - updated to bassopus.dll v2.4.1.1
   - v2.4.1
