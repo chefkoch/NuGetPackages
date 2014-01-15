@@ -25,6 +25,8 @@ MySQL.Data.Entity
 
 Changelog
 ---
+  - v6.8.3
+      - Added new version from http://dev.mysql.com/downloads/connector/net/6.8.html
   - v6.7.4
       - Added new version from http://dev.mysql.com/downloads/connector/net/6.7.html
   - v6.6.6
