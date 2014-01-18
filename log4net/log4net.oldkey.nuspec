@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>log4net.oldkey</id>
-        <version>1.2.11</version>
+        <version>1.2.12</version>
         <title>log4net (oldkey)</title>
         <authors>Apache Software Foundation</authors>
         <owners>chefkoch</owners>

@@ -8,7 +8,7 @@ For more information, see [FAQ](http://logging.apache.org/log4net/release/faq.ht
 
 Details
 ---
-  - Current version: 1.2.11
+  - Current version: 1.2.12
   - Installation command: ``Install-Package log4net`` or ``Install-Package log4net.oldkey``
 
 Content
@@ -30,6 +30,8 @@ Content
 
 Changelog
 ---
+  - v1.2.12
+      - Updated to [log4net-1.2.12-bin-oldkey.zip][archive] and [log4net-1.2.12-bin-newkey.zip][archive]
   - v1.2.11
       - Initial package release ([log4net-1.2.11-bin-oldkey.zip][archive] and [log4net-1.2.11-bin-newkey.zip][archive])
 
