@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v0.7.68
+      - updated to [MediaInfo_DLL_0.7.68_Windows_i386_WithoutInstaller.7z](http://sourceforge.net/projects/mediainfo/files/binary/mediainfo/0.7.68/)
   - v0.7.67
       - updated to [MediaInfo_DLL_0.7.67_Windows_i386_WithoutInstaller.7z](http://sourceforge.net/projects/mediainfo/files/binary/mediainfo/0.7.67/)
   - v0.7.64
