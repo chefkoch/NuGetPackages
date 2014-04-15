@@ -11,8 +11,9 @@ MySQL.Data
   - Installation command: ``Install-Package MySQL.Data``
 
 #### Content
-  - ``lib\net20\mysql.data.dll``
-  - ``lib\net40\mysql.data.dll``
+  - ``lib\net20\MySql.Data.dll``
+  - ``lib\net40\MySql.Data.dll``
+  - ``lib\net45\MySql.Data.dll``
 
 
 MySQL.Data.Entity
@@ -20,8 +21,9 @@ MySQL.Data.Entity
   - Installation command: ``Install-Package MySQL.Data.Entity``
 
 #### Content
-  - ``lib\net20\mysql.data.entity.dll``
-  - ``lib\net40\mysql.data.entity.dll``
+  - ``lib\net20\MySql.Data.Entity.dll``
+  - ``lib\net40\MySql.Data.Entity.dll``
+  - ``lib\net45\MySql.Data.Entity.EF5.dll``
 
 Changelog
 ---

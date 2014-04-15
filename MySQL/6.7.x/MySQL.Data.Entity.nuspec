@@ -9,15 +9,15 @@
         <projectUrl>http://www.mysql.com/downloads/connector/net/</projectUrl>
         <iconUrl>http://dev.mysql.com/common/logos/logo-mysql-110x57.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Connector/Net is a fully-managed ADO.NET driver for MySQL. This file contains the mysql.data.entity.dll for .NET 2 and .NET 4.</description>
+        <description>Connector/Net is a fully-managed ADO.NET driver for MySQL. This file contains the MySql.Data.Entity.dll for .NET 2 and .NET 4 and MySql.Data.Entity.EF5.dll for .NET 4.5.</description>
         <summary>Connector/Net is a fully-managed ADO.NET driver for MySQL.</summary>
         <dependencies>
             <dependency id="MySQL.Data" version="6.7.5" />
         </dependencies>
     </metadata>
     <files>
-        <file src="v2.0\mysql.data.entity.dll" target="lib\net20\mysql.data.entity.dll" />
-        <file src="v4.0\mysql.data.entity.dll" target="lib\net40\mysql.data.entity.dll" />
+        <file src="v2.0\MySql.Data.Entity.dll" target="lib\net20\MySql.Data.Entity.dll" />
+        <file src="v4.0\MySql.Data.Entity.dll" target="lib\net40\MySql.Data.Entity.dll" />
         <file src="v4.5\MySql.Data.Entity.EF5.dll" target="lib\net45\MySql.Data.Entity.EF5.dll" />
     </files>
 </package>
