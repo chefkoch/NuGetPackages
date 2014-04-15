@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MySQL.Data</id>
-        <version>6.7.4</version>
+        <version>6.7.5</version>
         <authors>Oracle Corporation</authors>
         <owners>chefkoch</owners>
         <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
@@ -13,7 +13,8 @@
         <summary>Connector/Net is a fully-managed ADO.NET driver for MySQL.</summary>
     </metadata>
     <files>
-        <file src="v2\mysql.data.dll" target="lib\net20\mysql.data.dll" />
-        <file src="v4\mysql.data.dll" target="lib\net40\mysql.data.dll" />
+        <file src="v2.0\mysql.data.dll" target="lib\net20\mysql.data.dll" />
+        <file src="v4.0\mysql.data.dll" target="lib\net40\mysql.data.dll" />
+        <file src="v4.5\mysql.data.dll" target="lib\net45\mysql.data.dll" />
     </files>
 </package>
