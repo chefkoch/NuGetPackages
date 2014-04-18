@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>bass.wasapi</id>
-        <version>2.4.0</version>
+        <version>2.4.0.2</version>
         <title>BASS WASAPI Addon (basswasapi.dll)</title>
         <authors>un4seen Developments</authors>
         <owners>chefkoch</owners>

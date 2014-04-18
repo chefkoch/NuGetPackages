@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v2.4.0.2
+      - updated DLL, no changelog available
   - v2.4.0
       - Initial package release
 
