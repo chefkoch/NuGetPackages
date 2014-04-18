@@ -15,6 +15,8 @@ Content
 
 Changelog
 ---
+  - v1.3.0.2
+      - updated DLL, no change log available
   - v1.3.0
       - Initial package release
 

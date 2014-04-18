@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>bass.asio</id>
-        <version>1.3.0</version>
+        <version>1.3.0.2</version>
         <title>BASSASIO (bassasio.dll)</title>
         <authors>un4seen Developments</authors>
         <owners>chefkoch</owners>

@@ -4,17 +4,20 @@ Copyright (c) 2005-2013 Un4seen Developments Ltd. All rights reserved.
 Files that you should have found in the BASSASIO package
 ========================================================
 BASSASIO.TXT    This file
-BASSASIO.DLL    The BASSASIO module
+BASSASIO.DLL    BASSASIO module
 BASSASIO.CHM    BASSASIO documentation
-WIN64
-  BASSASIO.DLL    Win64 version of the BASSASIO module
-  BASSASIO.LIB    BASSASIO import library
+X64\
+  BASSASIO.DLL    64-bit BASSASIO module
 C\              C/C++ API and examples...
   BASSASIO.H      BASSASIO C/C++ header file
   BASSASIO.LIB    BASSASIO import library
-  BASSASIO.DSW    Visual C++ workspace for examples
-  BASSASIO.SLN    Visual C++ 2005 workspace for examples
+  BASSASIO.DSW    Visual C++ 6 workspace for examples
+  BASSASIO.SLN    Visual C++ 2005 (and above) workspace for examples
   MAKEFILE        Makefile for all examples
+  X64\
+    BASSASIO.LIB    64-bit BASSASIO import library
+  SAFESEH\
+    BASSASIO.LIB    SAFESEH compatible BASSASIO import library
   CONTEST\        ASIO version of the BASS console example
     CONTEST.C
     CONTEST.DSP
@@ -105,7 +108,8 @@ VB\             Visual Basic API and examples...
     MODMULTI.BAS
 
 NOTE: You may need to "Unblock" the BASSASIO.CHM file in its "Properties" to
-      view it on Windows 7.
+      view it on Windows 7. The documentation can also be viewed online at
+      the BASSASIO website.
 
 NOTE: To run the example EXEs, first you will have to copy BASSASIO.DLL into
       the same directory as them. You will also need BASS.DLL, which can be
@@ -118,7 +122,7 @@ NOTE: To build the examples, you will need to copy the BASS API into the
 What's the point?
 =================
 BASSASIO is basically a wrapper for ASIO drivers, with the addition of channel
-joining, format conversion and resampling.
+joining and sample format/rate conversion.
 
 
 Requirements
@@ -292,7 +296,7 @@ change to the BASS interface are listed.
 ------------------
 * Notification of rate changes and reset requests
 	BASS_ASIO_SetNotify
-* Win64 version introduced
+* 64-bit version introduced
 
 1.0 - 11/6/2008
 ---------------
