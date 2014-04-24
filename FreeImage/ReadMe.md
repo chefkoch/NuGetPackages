@@ -13,6 +13,9 @@ Content
 
 Changelog
 ---
+  - v3.16.0 (2014-03-23)
+      - Updated FreeImage.dll, [News](http://freeimage.sourceforge.net/news.html), [What's New](http://sourceforge.net/projects/freeimage/files/Binary%20Distribution/3.16.0/)
+      - Added icon url to package
   - v3.15.4
       - Initial package release (FreeImage.dll v3.15.4)
 
