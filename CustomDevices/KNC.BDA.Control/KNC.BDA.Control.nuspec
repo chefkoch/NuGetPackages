@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>KNC.BDA.Control</id>
-        <version>1.4.720</version>
+        <version>1.6.114</version>
         <title>KNC BDA Control (KNCBDACTRL.dll)</title>
         <authors>KNC ONE, ODSoft multimedia</authors>
         <owners>chefkoch</owners>
