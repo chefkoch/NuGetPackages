@@ -13,7 +13,11 @@ Content
 
 Changelog
 ---
+  - v1.4.720
+      - package creation based on files from TVE35 branch
+        file version 1.4.720.0 product version 1.0.0.2 [TVE 3.5 historical, msvcr90.dll]
   - v1.2.1208
       - package creation based on files from TVE35 branch
+        file version 1.2.1208.0 product version 1.0.0.2 [TVE 3, msvcr90.dll]
 
 [KNC.BDA.Control]:  http://www.knc1.com/
