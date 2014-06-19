@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v1.0.1.5
+      - updated binary to v1.0.1.5
   - v1.0.1.3
       - updated binary to v1.0.1.3
   - v1.0.1.0
