@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v7.0.0
+      - updated to [mkvtoolnix-7.0.0.7z](https://www.bunkus.org/videotools/mkvtoolnix/win32/)
   - v6.9.1
       - updated to [mkvtoolnix-6.9.1.7z](https://www.bunkus.org/videotools/mkvtoolnix/win32/)
   - v6.8.0
