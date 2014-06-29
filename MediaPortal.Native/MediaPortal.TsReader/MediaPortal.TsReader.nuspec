@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MediaPortal.TsReader</id>
-        <version>1.7.1</version>
+        <version>3.0.83.1</version>
         <title>TsReader.ax</title>
         <authors>Team MediaPortal</authors>
         <owners>chefkoch</owners>
@@ -10,7 +10,7 @@
         <iconUrl>http://www.team-mediaportal.com/images/stories/homepageV3/promotional_materials/MP2_Icon_General_1.png</iconUrl>
         <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>todo: Add a description here!!!</description>
+        <description>TsReader is a DirectShow filter used to playback MPEG Transport Streams (.ts) from files or streaming sources. It's the main filter for TV playback in MediaPortal.</description>
         <copyright>Copyright © Team MediaPortal 2007 - 2014</copyright>
     </metadata>
     <files>
