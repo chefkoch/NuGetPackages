@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>xy-VSFilter</id>
+        <version>3.0.0.211</version>
+        <title>xy-VSFilter</title>
+        <authors>xy-VSFilter developers</authors>
+        <owners>offbyone</owners>
+        <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
+        <projectUrl>http://code.google.com/p/xy-vsfilter/</projectUrl>
+        <iconUrl>https://code.google.com/p/xy-vsfilter/logo?cct=1353400537</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>xy-VSFilter is a DirectShow filter, which connects to a video decoder and renderers subtitles at video resolution. It is based on VSFilter 2.39 Guliverkli2 with changes from VSFilter 2.41 MPC-HC.</description>
+        <summary>NuGet package to deploy xy-VSFilter</summary>
+    </metadata>
+    <files>
+        <file src="xy-VSFilter.targets" target="build\xy-VSFilter.targets" />
+        <file src="VSFilter.dll" target="VSFilter.dll" />
+    </files>
+</package>
