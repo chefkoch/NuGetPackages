@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.DirectShow.BaseClasses.Source</id>
+        <version>1.0.0</version>
+        <authors>Morpheus_xx</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>My package description.</description>
+    </metadata>
+    <files>
+        <file src="src\amextra.cpp" target="src\amextra.cpp" />
+        <file src="src\amextra.h" target="src\amextra.h" />
+        <file src="src\amfilter.cpp" target="src\amfilter.cpp" />
+        <file src="src\amfilter.h" target="src\amfilter.h" />
+        <file src="src\amvideo.cpp" target="src\amvideo.cpp" />
+        <file src="src\arithutil.cpp" target="src\arithutil.cpp" />
+        <file src="src\BaseClasses.vcxproj" target="src\BaseClasses.vcxproj" />
+        <file src="src\BaseClasses.vcxproj.filters" target="src\BaseClasses.vcxproj.filters" />
+        <file src="src\cache.h" target="src\cache.h" />
+        <file src="src\checkbmi.h" target="src\checkbmi.h" />
+        <file src="src\combase.cpp" target="src\combase.cpp" />
+        <file src="src\combase.h" target="src\combase.h" />
+        <file src="src\cprop.cpp" target="src\cprop.cpp" />
+        <file src="src\cprop.h" target="src\cprop.h" />
+        <file src="src\ctlutil.cpp" target="src\ctlutil.cpp" />
+        <file src="src\ctlutil.h" target="src\ctlutil.h" />
+        <file src="src\ddmm.cpp" target="src\ddmm.cpp" />
+        <file src="src\ddmm.h" target="src\ddmm.h" />
+        <file src="src\dllentry.cpp" target="src\dllentry.cpp" />
+        <file src="src\dllsetup.cpp" target="src\dllsetup.cpp" />
+        <file src="src\dllsetup.h" target="src\dllsetup.h" />
+        <file src="src\dxmperf.h" target="src\dxmperf.h" />
+        <file src="src\fourcc.h" target="src\fourcc.h" />
+        <file src="src\measure.h" target="src\measure.h" />
+        <file src="src\msgthrd.h" target="src\msgthrd.h" />
+        <file src="src\mtype.cpp" target="src\mtype.cpp" />
+        <file src="src\mtype.h" target="src\mtype.h" />
+        <file src="src\outputq.cpp" target="src\outputq.cpp" />
+        <file src="src\outputq.h" target="src\outputq.h" />
+        <file src="src\perflog.cpp" target="src\perflog.cpp" />
+        <file src="src\perflog.h" target="src\perflog.h" />
+        <file src="src\perfstruct.h" target="src\perfstruct.h" />
+        <file src="src\pstream.cpp" target="src\pstream.cpp" />
+        <file src="src\pstream.h" target="src\pstream.h" />
+        <file src="src\pullpin.cpp" target="src\pullpin.cpp" />
+        <file src="src\pullpin.h" target="src\pullpin.h" />
+        <file src="src\refclock.cpp" target="src\refclock.cpp" />
+        <file src="src\refclock.h" target="src\refclock.h" />
+        <file src="src\reftime.h" target="src\reftime.h" />
+        <file src="src\renbase.cpp" target="src\renbase.cpp" />
+        <file src="src\renbase.h" target="src\renbase.h" />
+        <file src="src\schedule.cpp" target="src\schedule.cpp" />
+        <file src="src\schedule.h" target="src\schedule.h" />
+        <file src="src\seekpt.cpp" target="src\seekpt.cpp" />
+        <file src="src\seekpt.h" target="src\seekpt.h" />
+        <file src="src\source.cpp" target="src\source.cpp" />
+        <file src="src\source.h" target="src\source.h" />
+        <file src="src\streams.h" target="src\streams.h" />
+        <file src="src\strmctl.cpp" target="src\strmctl.cpp" />
+        <file src="src\strmctl.h" target="src\strmctl.h" />
+        <file src="src\sysclock.cpp" target="src\sysclock.cpp" />
+        <file src="src\sysclock.h" target="src\sysclock.h" />
+        <file src="src\transfrm.cpp" target="src\transfrm.cpp" />
+        <file src="src\transfrm.h" target="src\transfrm.h" />
+        <file src="src\transip.cpp" target="src\transip.cpp" />
+        <file src="src\transip.h" target="src\transip.h" />
+        <file src="src\videoctl.cpp" target="src\videoctl.cpp" />
+        <file src="src\videoctl.h" target="src\videoctl.h" />
+        <file src="src\vtrans.cpp" target="src\vtrans.cpp" />
+        <file src="src\vtrans.h" target="src\vtrans.h" />
+        <file src="src\winctrl.cpp" target="src\winctrl.cpp" />
+        <file src="src\winctrl.h" target="src\winctrl.h" />
+        <file src="src\winutil.cpp" target="src\winutil.cpp" />
+        <file src="src\winutil.h" target="src\winutil.h" />
+        <file src="src\wxdebug.cpp" target="src\wxdebug.cpp" />
+        <file src="src\wxdebug.h" target="src\wxdebug.h" />
+        <file src="src\wxlist.cpp" target="src\wxlist.cpp" />
+        <file src="src\wxlist.h" target="src\wxlist.h" />
+        <file src="src\wxutil.cpp" target="src\wxutil.cpp" />
+        <file src="src\wxutil.h" target="src\wxutil.h" />
+    </files>
+</package>
