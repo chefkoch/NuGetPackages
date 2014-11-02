@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>bass.dsd</id>
+        <version>0.0.1</version>
+        <title>BASS DSD Addon (bassdsd.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>morpheusxx</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>BASSDSD is an extension to the BASS audio library, enabling decoding support for DSD encoded files.</description>
+        <summary>Contains the bassdsd.dll</summary>
+    </metadata>
+    <files>
+        <file src="bass.dsd.targets" target="build\bass.dsd.targets" />
+        <file src="bassdsd.dll" target="bassdsd.dll" />
+    </files>
+</package>
