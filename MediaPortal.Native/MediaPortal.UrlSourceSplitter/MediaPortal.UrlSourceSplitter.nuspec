@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.UrlSourceSplitter</id>
+        <version>2.1.4.5454</version>
+        <title>MediaPortal IPTV filter and url source splitter</title>
+        <authors>Team MediaPortal</authors>
+        <owners>georgius</owners>
+        <projectUrl>http://www.team-mediaportal.com/</projectUrl>
+        <iconUrl>http://www.team-mediaportal.com/images/stories/homepageV3/promotional_materials/MP2_Icon_General_1.png</iconUrl>
+        <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>The MediaPortal IPTV filter and url source splitter is a directshow source filter that enables direct playback for many protocols and filetypes used in online video sources in the internet.
+		Supported protocols:
+- HTTP, HTTPS
+- UDP, RTP
+- RTSP
+- Adobe Real-Time Messaging Protocol (RTMP)
+- Adobe HTTP Dynamic Streaming (HDS, F4M manifest)
+- Microsoft Smooth Streaming
+- Apple HTTP live streaming (M3U8 playlists)
+		</description>
+        <copyright>Copyright © Team MediaPortal 2007 - 2014</copyright>
+    </metadata>
+    <files>
+        <file src="MediaPortal.UrlSourceSplitter.targets" target="build\MediaPortal.UrlSourceSplitter.targets" />
+        <file src="MPUrlSourceSplitter.ax" target="MPUrlSourceSplitter.ax" />
+        <file src="MPUrlSourceSplitter_libcurl.dll" target="MPUrlSourceSplitter_libcurl.dll" />
+        <file src="MPUrlSourceSplitter_Parser_Default.dll" target="MPUrlSourceSplitter_Parser_Default.dll" />
+        <file src="MPUrlSourceSplitter_Parser_F4M.dll" target="MPUrlSourceSplitter_Parser_F4M.dll" />
+        <file src="MPUrlSourceSplitter_Parser_M3U8.dll" target="MPUrlSourceSplitter_Parser_M3U8.dll" />
+        <file src="MPUrlSourceSplitter_Parser_MPEG2TS.dll" target="MPUrlSourceSplitter_Parser_MPEG2TS.dll" />
+        <file src="MPUrlSourceSplitter_Parser_MSHS.dll" target="MPUrlSourceSplitter_Parser_MSHS.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Afhs.dll" target="MPUrlSourceSplitter_Protocol_Afhs.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Afhs_Decryption_Akamai.dll" target="MPUrlSourceSplitter_Protocol_Afhs_Decryption_Akamai.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Afhs_Decryption_Default.dll" target="MPUrlSourceSplitter_Protocol_Afhs_Decryption_Default.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Http.dll" target="MPUrlSourceSplitter_Protocol_Http.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_M3U8.dll" target="MPUrlSourceSplitter_Protocol_M3U8.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Mshs.dll" target="MPUrlSourceSplitter_Protocol_Mshs.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Rtmp.dll" target="MPUrlSourceSplitter_Protocol_Rtmp.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Rtsp.dll" target="MPUrlSourceSplitter_Protocol_Rtsp.dll" />
+        <file src="MPUrlSourceSplitter_Protocol_Udp.dll" target="MPUrlSourceSplitter_Protocol_Udp.dll" />
+        <file src="avcodec-mpurlsourcesplitter-54.dll" target="avcodec-mpurlsourcesplitter-54.dll" />
+        <file src="avformat-mpurlsourcesplitter-54.dll" target="avformat-mpurlsourcesplitter-54.dll" />
+        <file src="avutil-mpurlsourcesplitter-51.dll" target="avutil-mpurlsourcesplitter-51.dll" />
+    </files>
+</package>
+
+
