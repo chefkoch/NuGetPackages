@@ -21,7 +21,7 @@
         <Files Include="$(MSBuildThisFileDirectory)..\avformat-mpurlsourcesplitter-54.dll" />
         <Files Include="$(MSBuildThisFileDirectory)..\avutil-mpurlsourcesplitter-51.dll" />
     </ItemGroup>
-    <Target Name="BeforeBuild">
+    <Target Name="CopyMPUrlSourceSplitter" AfterTargets="BeforeBuild">
         <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)MPUrlSourceSplitter" SkipUnchangedFiles="true" />
         <ItemGroup>
             <FileWrites Include="@(Files->'$(TargetDir)\MPUrlSourceSplitter\%(Filename)%(Extension)')" />
