@@ -3,7 +3,7 @@
     <ItemGroup>
         <Files Include="$(MSBuildThisFileDirectory)..\VSFilter.dll" />
     </ItemGroup>
-    <Target Name="BeforeBuild">
+	<Target Name="CopyVsFilter" AfterTargets="BeforeBuild">
         <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
         <ItemGroup>
             <FileWrites Include="@(Files->'$(TargetDir)%(Filename)%(Extension)')" />
