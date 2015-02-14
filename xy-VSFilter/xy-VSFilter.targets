@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
     <ItemGroup>
-        <Files Include="$(MSBuildThisFileDirectory)..\VSFilter.dll" />
+        <VsFilterFiles Include="$(MSBuildThisFileDirectory)..\VSFilter.dll" />
     </ItemGroup>
 	<Target Name="CopyVsFilter" AfterTargets="BeforeBuild">
-        <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(VsFilterFiles)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
         <ItemGroup>
-            <FileWrites Include="@(Files->'$(TargetDir)%(Filename)%(Extension)')" />
+            <FileWrites Include="@(VsFilterFiles->'$(TargetDir)%(Filename)%(Extension)')" />
         </ItemGroup>
     </Target>
 </Project>

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
     <ItemGroup>
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter.ax" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_libcurl.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_Default.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_F4M.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_M3U8.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_MPEG2TS.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_MSHS.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs_Decryption_Akamai.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs_Decryption_Default.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Http.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_M3U8.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Mshs.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Rtmp.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Rtsp.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Udp.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\avcodec-mpurlsourcesplitter-54.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\avformat-mpurlsourcesplitter-54.dll" />
-        <Files Include="$(MSBuildThisFileDirectory)..\avutil-mpurlsourcesplitter-51.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter.ax" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_libcurl.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_Default.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_F4M.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_M3U8.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_MPEG2TS.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_MSHS.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs_Decryption_Akamai.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs_Decryption_Default.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Http.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_M3U8.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Mshs.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Rtmp.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Rtsp.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Udp.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\avcodec-mpurlsourcesplitter-54.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\avformat-mpurlsourcesplitter-54.dll" />
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\avutil-mpurlsourcesplitter-51.dll" />
     </ItemGroup>
     <Target Name="CopyMPUrlSourceSplitter" AfterTargets="BeforeBuild">
-        <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)MPUrlSourceSplitter" SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(MPUrlSourceSplitterFiles)" DestinationFolder="$(TargetDir)MPUrlSourceSplitter" SkipUnchangedFiles="true" />
         <ItemGroup>
-            <FileWrites Include="@(Files->'$(TargetDir)\MPUrlSourceSplitter\%(Filename)%(Extension)')" />
+            <FileWrites Include="@(MPUrlSourceSplitterFiles->'$(TargetDir)\MPUrlSourceSplitter\%(Filename)%(Extension)')" />
         </ItemGroup>
     </Target>
 </Project>
