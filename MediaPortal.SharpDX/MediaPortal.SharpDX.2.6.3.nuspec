@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.SharpDX</id>
+        <version>2.6.3</version>
+        <title>MediaPortal.SharpDX</title>
+        <authors>Alexandre Mutel</authors>
+        <owners>Alexandre Mutel</owners>
+        <licenseUrl>http://sharpdx.org/License.txt</licenseUrl>
+        <projectUrl>http://sharpdx.org</projectUrl>
+        <iconUrl>http://sharpdx.org/logo_100x100.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Extended build by Morpheus_xx, Team MediaPortal. Core assembly for all SharpDX assemblies.</description>
+        <releaseNotes />
+        <copyright>Copyright (c) 2010-2014 Alexandre Mutel</copyright>
+        <tags>SharpDX DirectX Direct3D Multimedia MDX 3D</tags>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System.Drawing" targetFramework=".NETFramework2.0, .NETFramework4.0" />
+            <frameworkAssembly assemblyName="System.Windows.Forms" targetFramework=".NETFramework2.0, .NETFramework4.0" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="SharpDX.dll" target="lib\SharpDX.dll" />
+    </files>
+</package>
