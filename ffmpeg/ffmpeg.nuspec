@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ffmpeg</id>
-        <version>2.7.1</version>
+        <version>2.8.20150913</version>
         <title>FFmpeg (x86)</title>
         <authors>ffmpeg.org</authors>
         <owners>chefkoch</owners>
@@ -15,6 +15,47 @@
     </metadata>
     <files>
         <file src="ffmpeg.targets" target="build\ffmpeg.targets" />
+        <file src="fonts\conf.d\10-autohint.conf" target="fonts\conf.d\10-autohint.conf" />
+        <file src="fonts\conf.d\10-no-sub-pixel.conf" target="fonts\conf.d\10-no-sub-pixel.conf" />
+        <file src="fonts\conf.d\10-scale-bitmap-fonts.conf" target="fonts\conf.d\10-scale-bitmap-fonts.conf" />
+        <file src="fonts\conf.d\10-sub-pixel-bgr.conf" target="fonts\conf.d\10-sub-pixel-bgr.conf" />
+        <file src="fonts\conf.d\10-sub-pixel-rgb.conf" target="fonts\conf.d\10-sub-pixel-rgb.conf" />
+        <file src="fonts\conf.d\10-sub-pixel-vbgr.conf" target="fonts\conf.d\10-sub-pixel-vbgr.conf" />
+        <file src="fonts\conf.d\10-sub-pixel-vrgb.conf" target="fonts\conf.d\10-sub-pixel-vrgb.conf" />
+        <file src="fonts\conf.d\10-unhinted.conf" target="fonts\conf.d\10-unhinted.conf" />
+        <file src="fonts\conf.d\11-lcdfilter-default.conf" target="fonts\conf.d\11-lcdfilter-default.conf" />
+        <file src="fonts\conf.d\11-lcdfilter-legacy.conf" target="fonts\conf.d\11-lcdfilter-legacy.conf" />
+        <file src="fonts\conf.d\11-lcdfilter-light.conf" target="fonts\conf.d\11-lcdfilter-light.conf" />
+        <file src="fonts\conf.d\20-unhint-small-vera.conf" target="fonts\conf.d\20-unhint-small-vera.conf" />
+        <file src="fonts\conf.d\25-unhint-nonlatin.conf" target="fonts\conf.d\25-unhint-nonlatin.conf" />
+        <file src="fonts\conf.d\30-metric-aliases.conf" target="fonts\conf.d\30-metric-aliases.conf" />
+        <file src="fonts\conf.d\30-urw-aliases.conf" target="fonts\conf.d\30-urw-aliases.conf" />
+        <file src="fonts\conf.d\40-nonlatin.conf" target="fonts\conf.d\40-nonlatin.conf" />
+        <file src="fonts\conf.d\45-latin.conf" target="fonts\conf.d\45-latin.conf" />
+        <file src="fonts\conf.d\49-sansserif.conf" target="fonts\conf.d\49-sansserif.conf" />
+        <file src="fonts\conf.d\50-user.conf" target="fonts\conf.d\50-user.conf" />
+        <file src="fonts\conf.d\51-local.conf" target="fonts\conf.d\51-local.conf" />
+        <file src="fonts\conf.d\60-latin.conf" target="fonts\conf.d\60-latin.conf" />
+        <file src="fonts\conf.d\65-fonts-persian.conf" target="fonts\conf.d\65-fonts-persian.conf" />
+        <file src="fonts\conf.d\65-khmer.conf" target="fonts\conf.d\65-khmer.conf" />
+        <file src="fonts\conf.d\65-nonlatin.conf" target="fonts\conf.d\65-nonlatin.conf" />
+        <file src="fonts\conf.d\69-unifont.conf" target="fonts\conf.d\69-unifont.conf" />
+        <file src="fonts\conf.d\70-no-bitmaps.conf" target="fonts\conf.d\70-no-bitmaps.conf" />
+        <file src="fonts\conf.d\70-yes-bitmaps.conf" target="fonts\conf.d\70-yes-bitmaps.conf" />
+        <file src="fonts\conf.d\80-delicious.conf" target="fonts\conf.d\80-delicious.conf" />
+        <file src="fonts\conf.d\90-synthetic.conf" target="fonts\conf.d\90-synthetic.conf" />
+        <file src="fonts\fonts.conf" target="fonts\fonts.conf" />
+        <file src="fonts\fonts.dtd" target="fonts\fonts.dtd" />
+        <file src="avcodec-57.dll" target="avcodec-57.dll" />
+        <file src="avdevice-57.dll" target="avdevice-57.dll" />
+        <file src="avfilter-6.dll" target="avfilter-6.dll" />
+        <file src="avformat-57.dll" target="avformat-57.dll" />
+        <file src="avutil-55.dll" target="avutil-55.dll" />
         <file src="ffmpeg.exe" target="ffmpeg.exe" />
+        <file src="ffplay.exe" target="ffplay.exe" />
+        <file src="ffprobe.exe" target="ffprobe.exe" />
+        <file src="postproc-54.dll" target="postproc-54.dll" />
+        <file src="swresample-2.dll" target="swresample-2.dll" />
+        <file src="swscale-4.dll" target="swscale-4.dll" />
     </files>
 </package>

@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v2.8.20150913
+      - Updated ``ffmpeg.exe`` to [ffmpeg-20150913-git-d13a2df-win32-shared.7z][shared_builds]
   - v2.7.1
       - Updated ``ffmpeg.exe`` to [ffmpeg-2.7.1-win32-static.7z][builds]
   - v2.2.1
@@ -34,5 +36,6 @@ Resources
 [changelog]:  http://git.videolan.org/?p=ffmpeg.git;a=blob_plain;f=Changelog
 [sourcecode]: http://git.videolan.org/?p=ffmpeg.git
 [builds]:     http://ffmpeg.zeranoe.com/builds/win32/static/
+[shared_builds]:     http://ffmpeg.zeranoe.com/builds/win32/shared/
   - [ChangeLog]
   - Source code: [git @ videolan.org][sourcecode]

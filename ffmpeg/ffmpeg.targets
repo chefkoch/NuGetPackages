@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
     <ItemGroup>
-        <Files Include="$(MSBuildThisFileDirectory)..\ffmpeg.exe" />
+        <Files Include="$(MSBuildThisFileDirectory)..\*.exe" />
+        <Files Include="$(MSBuildThisFileDirectory)..\*.dll" />
+        <Fonts Include="$(MSBuildThisFileDirectory)..\Fonts\**\*.*" />
     </ItemGroup>
     <Target Name="BeforeBuild">
-        <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
-        <ItemGroup>
-            <FileWrites Include="@(Files->'$(TargetDir)%(Filename)%(Extension)')" />
-        </ItemGroup>
+        <Copy SourceFiles="@(Files)" DestinationFiles="@(Files->'$(TargetDir)\%(Filename)%(Extension)')" />
+        <Copy SourceFiles="@(Fonts)" DestinationFiles="@(Fonts->'$(TargetDir)\Fonts\%(RecursiveDir)%(Filename)%(Extension)')" />
     </Target>
 </Project>
