@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v2.7.1
+      - Updated ``ffmpeg.exe`` to [ffmpeg-2.7.1-win32-static.7z][builds]
   - v2.2.1
       - Updated ``ffmpeg.exe`` to [ffmpeg-2.2.1-win32-static.7z][builds]
   - v2.1.4
