@@ -5,9 +5,7 @@
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_libcurl.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_Default.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_F4M.dll" />
-        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_M3U8.dll" />		
-		<MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_M3U8_Decryption_Aes128.dll" />
-		<MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_M3U8_Decryption_None.dll" />		
+        <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_M3U8.dll" />			
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_MPEG2TS.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Parser_MSHS.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs.dll" />
@@ -15,6 +13,8 @@
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Afhs_Decryption_Default.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Http.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_M3U8.dll" />
+		<MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_M3U8_Decryption_Aes128.dll" />
+		<MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_M3U8_Decryption_None.dll" />	
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Mshs.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Rtmp.dll" />
         <MPUrlSourceSplitterFiles Include="$(MSBuildThisFileDirectory)..\MPUrlSourceSplitter_Protocol_Rtsp.dll" />
