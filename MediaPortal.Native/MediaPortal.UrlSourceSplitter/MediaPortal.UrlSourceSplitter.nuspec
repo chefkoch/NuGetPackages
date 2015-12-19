@@ -36,8 +36,8 @@
         <file src="MPUrlSourceSplitter_Protocol_Afhs_Decryption_Default.dll" target="MPUrlSourceSplitter_Protocol_Afhs_Decryption_Default.dll" />
         <file src="MPUrlSourceSplitter_Protocol_Http.dll" target="MPUrlSourceSplitter_Protocol_Http.dll" />
         <file src="MPUrlSourceSplitter_Protocol_M3U8.dll" target="MPUrlSourceSplitter_Protocol_M3U8.dll" />		
-		<file src="MPUrlSourceSplitter_Protocol_M3U8.dll" target="MPUrlSourceSplitter_Protocol_M3U8_Decryption_Aes128.dll" />
-		<file src="MPUrlSourceSplitter_Protocol_M3U8.dll" target="MPUrlSourceSplitter_Protocol_M3U8_Decryption_None.dll" />		
+		<file src="MPUrlSourceSplitter_Protocol_M3U8_Decryption_Aes128.dll" target="MPUrlSourceSplitter_Protocol_M3U8_Decryption_Aes128.dll" />
+		<file src="MPUrlSourceSplitter_Protocol_M3U8_Decryption_None.dll" target="MPUrlSourceSplitter_Protocol_M3U8_Decryption_None.dll" />		
         <file src="MPUrlSourceSplitter_Protocol_Mshs.dll" target="MPUrlSourceSplitter_Protocol_Mshs.dll" />
         <file src="MPUrlSourceSplitter_Protocol_Rtmp.dll" target="MPUrlSourceSplitter_Protocol_Rtmp.dll" />
         <file src="MPUrlSourceSplitter_Protocol_Rtsp.dll" target="MPUrlSourceSplitter_Protocol_Rtsp.dll" />
