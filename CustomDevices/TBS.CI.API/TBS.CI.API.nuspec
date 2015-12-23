@@ -5,12 +5,12 @@
         <version>1.0.1.5</version>
         <title>TBS CI API (TbsCIapi.dll)</title>
         <authors>TBS Technologies</authors>
-        <owners>chefkoch</owners>
+        <owners>chefkoch,mm1352000</owners>
         <licenseUrl>http://www.tbsdtv.com/</licenseUrl>
         <projectUrl>http://www.tbsdtv.com/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>TBS CI API description.</description>
-        <summary>Contains the TbsCIapi.dll</summary>
+        <description>Contains TbsCIapi.dll</description>
+        <summary>Contains TbsCIapi.dll</summary>
     </metadata>
     <files>
         <file src="TBS.CI.API.targets" target="build\TBS.CI.API.targets" />

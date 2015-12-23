@@ -4,13 +4,13 @@
         <id>TeVii.API</id>
         <version>0.0.1</version>
         <title>TeVii API (TeVii.dll)</title>
-        <authors>TeVii developers</authors>
-        <owners>chefkoch</owners>
+        <authors>TeVii Technology</authors>
+        <owners>chefkoch,mm1352000</owners>
         <licenseUrl>http://www.tevii.com/</licenseUrl>
         <projectUrl>http://www.tevii.com/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>TeVii API description.</description>
-        <summary>Contains the TeVii.dll</summary>
+        <description>Contains TeVii.dll</description>
+        <summary>Contains TeVii.dll</summary>
     </metadata>
     <files>
         <file src="TeVii.API.targets" target="build\TeVii.API.targets" />

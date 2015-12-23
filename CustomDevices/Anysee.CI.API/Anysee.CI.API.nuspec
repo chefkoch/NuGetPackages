@@ -4,13 +4,13 @@
         <id>Anysee.CI.API</id>
         <version>0.0.1</version>
         <title>Anysee CI API (CIAPI.dll)</title>
-        <authors>CIAPI developers</authors>
-        <owners>chefkoch</owners>
+        <authors>Anysee,Advanced Multimedia Technology</authors>
+        <owners>chefkoch,mm1352000</owners>
         <licenseUrl>http://www.anysee.com/</licenseUrl>
         <projectUrl>http://www.anysee.com/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Anysee CI API description.</description>
-        <summary>Contains the CIAPI.dll</summary>
+        <description>Contains CIAPI.dll</description>
+        <summary>Contains CIAPI.dll</summary>
     </metadata>
     <files>
         <file src="Anysee.CI.API.targets" target="build\Anysee.CI.API.targets" />

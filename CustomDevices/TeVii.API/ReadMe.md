@@ -1,7 +1,7 @@
 TeVii.API
 ===
 
-[TeVii.API] description.
+This NuGet package is for deploying the TeVii TeVii.dll to projects and GIT repositories.
 
 Details
 ---
@@ -14,6 +14,6 @@ Content
 Changelog
 ---
   - v0.0.1
-      - package creation based on files from TVE35 branch (unknown version)
+      - Initial package based on official SDK (2009, unversioned).
 
 [TeVii.API]:  http://www.tevii.com/
