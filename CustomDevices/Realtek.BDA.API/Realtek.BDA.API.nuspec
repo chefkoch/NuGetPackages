@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Realtek.BDA.API</id>
+        <version>0.0.1</version>
+        <title>Realtek BDA API (RTL283XACCESS.dll)</title>
+        <authors>Realtek Semiconductor Corporation</authors>
+        <owners>chefkoch,mm1352000</owners>
+        <licenseUrl>http://www.realtek.com/</licenseUrl>
+        <projectUrl>http://www.realtek.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Contains RTL283XACCESS.dll</description>
+        <summary>Contains RTL283XACCESS.dll</summary>
+    </metadata>
+    <files>
+        <file src="Realtek.BDA.API.targets" target="build\Realtek.BDA.API.targets" />
+        <file src="RTL283XACCESS.dll" target="RTL283XACCESS.dll" />
+    </files>
+</package>
