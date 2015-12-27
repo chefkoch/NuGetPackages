@@ -1,7 +1,7 @@
 Anysee.CI.API
 ===
 
-[Anysee.CI.API] description.
+This NuGet package is for deploying the Anysee CIAPI.dll to projects and GIT repositories.
 
 Details
 ---
@@ -14,6 +14,6 @@ Content
 Changelog
 ---
   - v0.0.1
-      - package creation based on files from TVE35 branch (unknown version)
+      - Initial package based on CI API 1.6.
 
 [Anysee.CI.API]:  http://www.anysee.com/

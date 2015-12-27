@@ -4,13 +4,13 @@
         <id>TechnoTrend.BDA.API</id>
         <version>1.0.1.21</version>
         <title>TechnoTrend BDA API (ttBdaDrvApi_Dll.dll)</title>
-        <authors>TechnoTrend</authors>
-        <owners>chefkoch</owners>
+        <authors>TechnoTrend,CityCom Communication Systems</authors>
+        <owners>chefkoch,mm1352000</owners>
         <licenseUrl>http://www.technotrend.eu/</licenseUrl>
         <projectUrl>http://www.technotrend.eu/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>TechnoTrend BDA API description.</description>
-        <summary>Contains the ttBdaDrvApi_Dll.dll</summary>
+        <description>Contains ttBdaDrvApi_Dll.dll</description>
+        <summary>Contains ttBdaDrvApi_Dll.dll</summary>
     </metadata>
     <files>
         <file src="TechnoTrend.BDA.API.targets" target="build\TechnoTrend.BDA.API.targets" />

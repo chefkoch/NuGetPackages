@@ -1,7 +1,7 @@
 TBS.CI.API
 ===
 
-[TBS.CI.API] description.
+This NuGet package is for deploying the TBS TbsCIapi.dll to projects and GIT repositories.
 
 Details
 ---
@@ -14,10 +14,10 @@ Content
 Changelog
 ---
   - v1.0.1.5
-      - updated binary to v1.0.1.5
+      - Package based on official CI DLL 1.0.1.5.
   - v1.0.1.3
-      - updated binary to v1.0.1.3
+      - Package based on official CI DLL 1.0.1.3.
   - v1.0.1.0
-      - package creation based on files from TVE35 branch
+      - Initial package based on official public CI DLL 1.0.1.0.
 
 [TBS.CI.API]:  http://www.tbsdtv.com/

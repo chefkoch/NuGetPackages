@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>KNC.BDA.Control</id>
+        <id>KNC.BDA.API</id>
         <version>1.6.114</version>
-        <title>KNC BDA Control (KNCBDACTRL.dll)</title>
-        <authors>KNC ONE, ODSoft multimedia</authors>
-        <owners>chefkoch</owners>
+        <title>KNC BDA API (KNCBDACTRL.dll)</title>
+        <authors>KNC ONE,ODSoft Multimedia</authors>
+        <owners>chefkoch,mm1352000</owners>
         <licenseUrl>http://www.knc1.com/</licenseUrl>
         <projectUrl>http://www.knc1.com/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>KNC BDA Control description.</description>
-        <summary>Contains the KNCBDACTRL.dll</summary>
+        <description>Contains KNCBDACTRL.dll</description>
+        <summary>Contains KNCBDACTRL.dll</summary>
     </metadata>
     <files>
-        <file src="KNC.BDA.Control.targets" target="build\KNC.BDA.Control.targets" />
+        <file src="KNC.BDA.API.targets" target="build\KNC.BDA.API.targets" />
         <file src="KNCBDACTRL.dll" target="KNCBDACTRL.dll" />
     </files>
 </package>
