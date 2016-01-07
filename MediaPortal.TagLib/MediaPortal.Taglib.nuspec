@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>MediaPortal.TagLib</id>
-        <version>2.0.3.8</version>
+        <version>2.1.0.1</version>
         <title>TagLib#</title>
         <authors>Brian Nickel,Gabriel Burt, H. Wahrmann, etc.</authors>
         <licenseUrl>http://www.opensource.org/licenses/lgpl-2.1.php</licenseUrl>
@@ -10,7 +10,10 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This is an inoffical version of TagLib#, containing additional fixes and features from the MediaPortal team.
 		TagLib# (aka taglib-sharp) is a library for reading and writing metadata in media files, including video, audio, and photo formats.</description>
-        <releaseNotes>Version 2.0.3.8 (2014/11/07)
+        <releaseNotes>Version 2.1.0.1 (2016/01/07)
+		Fixes in channel parsing in MPEG audio header
+		
+		Version 2.0.3.8 (2014/11/07)
 		Added support for reading and writing metadata of DSD encoded files.
 </releaseNotes>
     </metadata>
