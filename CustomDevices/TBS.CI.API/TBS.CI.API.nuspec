@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>TBS.CI.API</id>
-        <version>1.0.1.5</version>
+        <version>1.0.2.0</version>
         <title>TBS CI API (TbsCIapi.dll)</title>
         <authors>TBS Technologies</authors>
         <owners>chefkoch,mm1352000</owners>
