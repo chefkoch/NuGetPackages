@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.InputStream.smoothstream</id>
+        <version>1.2.3</version>
+        <title>MediaPortal.InputStream.smoothstream</title>
+        <authors>Team MediaPortal</authors>
+        <owners>morpheus_xx</owners>
+        <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+        <projectUrl>http://www.team-mediaportal.com/</projectUrl>
+        <iconUrl>http://www.team-mediaportal.com/images/stories/homepageV3/promotional_materials/MP2_Icon_General_1.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>InputStream Client for SmoothStreamingMedia files</description>
+        <copyright>Copyright © Team MediaPortal 2016, Kodi developers</copyright>
+    </metadata>
+    <files>
+        <file src="MediaPortal.InputStream.smoothstream.targets" target="build\MediaPortal.InputStream.smoothstream.targets" />
+        <file src="inputstream.smoothstream\resources\language\resource.language.en_gb\strings.po" target="inputstream.smoothstream\resources\language\resource.language.en_gb\strings.po" />
+        <file src="inputstream.smoothstream\resources\settings.xml" target="inputstream.smoothstream\resources\settings.xml" />
+        <file src="inputstream.smoothstream\addon.xml" target="inputstream.smoothstream\addon.xml" />
+        <file src="inputstream.smoothstream\changelog.txt" target="inputstream.smoothstream\changelog.txt" />
+        <file src="inputstream.smoothstream\inputstream.smoothstream.dll" target="inputstream.smoothstream\inputstream.smoothstream.dll" />
+    </files>
+</package>

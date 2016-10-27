@@ -1,0 +1,24 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.smoothstream\resources\language\resource.language.en_gb\strings.po">
+      <Link>inputstream.smoothstream\resources\language\resource.language.en_gb\strings.po</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.smoothstream\resources\settings.xml">
+      <Link>inputstream.smoothstream\resources\settings.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.smoothstream\addon.xml">
+      <Link>inputstream.smoothstream\addon.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.smoothstream\changelog.txt">
+      <Link>inputstream.smoothstream\changelog.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.smoothstream\inputstream.smoothstream.dll">
+      <Link>inputstream.smoothstream\inputstream.smoothstream.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
