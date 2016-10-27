@@ -1,0 +1,32 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.mpd\lib\ssd_wv.dll">
+      <Link>inputstream.mpd\lib\ssd_wv.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.mpd\resources\language\resource.language.en_gb\strings.po">
+      <Link>inputstream.mpd\resources\language\resource.language.en_gb\strings.po</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.mpd\resources\settings.xml">
+      <Link>inputstream.mpd\resources\settings.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.mpd\addon.xml">
+      <Link>inputstream.mpd\addon.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.mpd\changelog.txt">
+      <Link>inputstream.mpd\changelog.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.mpd\icon.png">
+      <Link>inputstream.mpd\icon.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.mpd\inputstream.mpd.dll">
+      <Link>inputstream.mpd\inputstream.mpd.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

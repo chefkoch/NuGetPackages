@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.InputStream.mpd</id>
+        <version>1.2.17</version>
+        <title>MediaPortal.InputStream.mpd</title>
+        <authors>Team MediaPortal</authors>
+        <owners>morpheus_xx</owners>
+        <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+        <projectUrl>http://www.team-mediaportal.com/</projectUrl>
+        <iconUrl>http://www.team-mediaportal.com/images/stories/homepageV3/promotional_materials/MP2_Icon_General_1.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>InputStream Client for MPEG DASH files</description>
+        <copyright>Copyright © Team MediaPortal 2016, Kodi developers</copyright>
+    </metadata>
+    <files>
+        <file src="MediaPortal.InputStream.mpd.targets" target="build\MediaPortal.InputStream.mpd.targets" />
+        <file src="inputstream.mpd\lib\ssd_wv.dll" target="inputstream.mpd\lib\ssd_wv.dll" />
+        <file src="inputstream.mpd\resources\language\resource.language.en_gb\strings.po" target="inputstream.mpd\resources\language\resource.language.en_gb\strings.po" />
+        <file src="inputstream.mpd\resources\settings.xml" target="inputstream.mpd\resources\settings.xml" />
+        <file src="inputstream.mpd\addon.xml" target="inputstream.mpd\addon.xml" />
+        <file src="inputstream.mpd\changelog.txt" target="inputstream.mpd\changelog.txt" />
+        <file src="inputstream.mpd\icon.png" target="inputstream.mpd\icon.png" />
+        <file src="inputstream.mpd\inputstream.mpd.dll" target="inputstream.mpd\inputstream.mpd.dll" />
+    </files>
+</package>
