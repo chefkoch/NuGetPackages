@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MediaPortal.DVBSub</id>
-        <version>1.7.1</version>
+        <version>1.16.0</version>
         <title>DVBSub3.ax</title>
         <authors>Team MediaPortal</authors>
         <owners>chefkoch</owners>
@@ -11,7 +11,7 @@
         <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>todo: Add a description here!!!</description>
-        <copyright>Copyright © Team MediaPortal 2007 - 2014</copyright>
+        <copyright>Copyright © Team MediaPortal 2007 - 2017</copyright>
     </metadata>
     <files>
         <file src="MediaPortal.DVBSub.targets" target="build\MediaPortal.DVBSub.targets" />
