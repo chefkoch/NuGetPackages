@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MediaInfo</id>
-        <version>0.7.90</version>
+        <version>0.7.95</version>
         <title>MediaInfo.dll (x86)</title>
         <authors>zenitram</authors>
         <owners>chefkoch</owners>
