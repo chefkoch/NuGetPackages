@@ -3,6 +3,7 @@
     <ItemGroup>
         <Files Include="$(MSBuildThisFileDirectory)..\BDReader.ax" />
         <Files Include="$(MSBuildThisFileDirectory)..\bluray.dll" />
+        <Files Include="$(MSBuildThisFileDirectory)..\libbluray.jar" />
     </ItemGroup>
     <Target Name="BeforeBuild">
         <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />

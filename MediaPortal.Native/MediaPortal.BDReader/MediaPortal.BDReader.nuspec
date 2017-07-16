@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MediaPortal.BDReader</id>
-        <version>1.7.1.1</version>
+        <version>1.16.0.1</version>
         <title>BDReader.ax</title>
         <authors>Team MediaPortal</authors>
         <owners>chefkoch</owners>
@@ -11,11 +11,12 @@
         <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This package contains BDReader.ax and bluray.dll.</description>
-        <copyright>Copyright © Team MediaPortal 2007 - 2014</copyright>
+        <copyright>Copyright © Team MediaPortal 2007 - 2017</copyright>
     </metadata>
     <files>
         <file src="MediaPortal.BDReader.targets" target="build\MediaPortal.BDReader.targets" />
         <file src="BDReader.ax" target="BDReader.ax" />
         <file src="bluray.dll" target="bluray.dll" />
+        <file src="libbluray.jar" target="libbluray.jar" />
     </files>
 </package>
