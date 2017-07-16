@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.InputStream.Adaptive</id>
+        <version>1.0.4</version>
+        <title>MediaPortal.InputStream.Adaptive</title>
+        <authors>Team MediaPortal</authors>
+        <owners>morpheus_xx</owners>
+        <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+        <projectUrl>http://www.team-mediaportal.com/</projectUrl>
+        <iconUrl>http://www.team-mediaportal.com/images/stories/homepageV3/promotional_materials/MP2_Icon_General_1.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>InputStream Client for adaptive streaming (DASH, Smoothstream)</description>
+        <copyright>Copyright © Team MediaPortal 2016, Kodi developers</copyright>
+    </metadata>
+    <files>
+        <file src="MediaPortal.InputStream.adaptive.targets" target="build\MediaPortal.InputStream.adaptive.targets" />
+        <file src="inputstream.adaptive\lib\ssd_wv.dll" target="inputstream.adaptive\lib\ssd_wv.dll" />
+        <file src="inputstream.adaptive\resources\language\resource.language.en_gb\strings.po" target="inputstream.adaptive\resources\language\resource.language.en_gb\strings.po" />
+        <file src="inputstream.adaptive\resources\settings.xml" target="inputstream.adaptive\resources\settings.xml" />
+        <file src="inputstream.adaptive\addon.xml" target="inputstream.adaptive\addon.xml" />
+        <file src="inputstream.adaptive\changelog.txt" target="inputstream.adaptive\changelog.txt" />
+        <file src="inputstream.adaptive\icon.png" target="inputstream.adaptive\icon.png" />
+        <file src="inputstream.adaptive\inputstream.adaptive.dll" target="inputstream.adaptive\inputstream.adaptive.dll" />
+    </files>
+</package>

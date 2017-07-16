@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: Inputstream.smoothstream
-# Addon id: inputstream.smoothstream
+# Addon Name: Inputstream.adaptive
+# Addon id: inputstream.adaptive
 # Addon Provider: peak3d
 
 msgid ""
@@ -31,3 +31,11 @@ msgstr "Absolute path to the folder containing the decrypters"
 msgctxt "#30110"
 msgid "Max. Resolution"
 msgstr "Maximum Resolution"
+
+msgctxt "#30111"
+msgid "Stream Selection"
+msgstr "Stream Selection"
+
+msgctxt "#30112"
+msgid "Media"
+msgstr "Media"

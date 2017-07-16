@@ -1,0 +1,32 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.adaptive\lib\ssd_wv.dll">
+      <Link>inputstream.adaptive\lib\ssd_wv.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.adaptive\resources\language\resource.language.en_gb\strings.po">
+      <Link>inputstream.adaptive\resources\language\resource.language.en_gb\strings.po</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.adaptive\resources\settings.xml">
+      <Link>inputstream.adaptive\resources\settings.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.adaptive\addon.xml">
+      <Link>inputstream.adaptive\addon.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.adaptive\changelog.txt">
+      <Link>inputstream.adaptive\changelog.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.adaptive\icon.png">
+      <Link>inputstream.adaptive\icon.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\inputstream.adaptive\inputstream.adaptive.dll">
+      <Link>inputstream.adaptive\inputstream.adaptive.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
