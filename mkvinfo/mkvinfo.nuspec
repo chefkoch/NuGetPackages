@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>mkvinfo</id>
-        <version>7.0.0</version>
+        <version>21.0.0</version>
         <title>mkvinfo</title>
         <authors>Moritz Bunkus</authors>
         <owners>chefkoch</owners>
@@ -15,6 +15,7 @@
     </metadata>
     <files>
         <file src="mkvinfo.targets" target="build\mkvinfo.targets" />
-        <file src="mkvinfo.exe" target="mkvinfo.exe" />
+        <file src="x86\mkvinfo.exe" target="x86\mkvinfo.exe" />
+        <file src="x64\mkvinfo.exe" target="x64\mkvinfo.exe" />
     </files>
 </package>

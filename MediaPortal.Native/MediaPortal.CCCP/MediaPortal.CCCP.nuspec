@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MediaPortal.CCCP</id>
-        <version>3.0.0.1</version>
+        <version>3.0.0.1001</version>
         <title>Core CC Parser Filter</title>
         <authors>Team MediaPortal</authors>
         <owners>Morpheus_xx</owners>
@@ -11,7 +11,7 @@
         <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>CCCP (Core Closed Captioning Parser) is a DirectShow filter that extracts Closed Captioning data from MPEG2 video. The data is normally used by the downstream filter to render and mix the CC with main video to aid hearing or language-impaired users.</description>
-        <copyright>Copyright © Team MediaPortal 2007 - 2016</copyright>
+        <copyright>Copyright © Team MediaPortal 2007 - 2017</copyright>
     </metadata>
     <files>
         <file src="MediaPortal.CCCP.targets" target="build\MediaPortal.CCCP.targets" />

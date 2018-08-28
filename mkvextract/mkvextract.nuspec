@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>mkvextract</id>
-        <version>7.0.0</version>
+        <version>21.0.0</version>
         <title>mkvextract</title>
         <authors>Moritz Bunkus</authors>
         <owners>chefkoch</owners>
@@ -15,6 +15,7 @@
     </metadata>
     <files>
         <file src="mkvextract.targets" target="build\mkvextract.targets" />
-        <file src="mkvextract.exe" target="mkvextract.exe" />
+        <file src="x64\mkvextract.exe" target="x64\mkvextract.exe" />
+        <file src="x86\mkvextract.exe" target="x86\mkvextract.exe" />
     </files>
 </package>

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MediaPortal.TsReader</id>
-        <version>4.2.2.38</version>
+        <version>4.2.2.39</version>
         <title>TsReader.ax</title>
         <authors>Team MediaPortal</authors>
         <owners>chefkoch</owners>
