@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.FreeImageNET</id>
+        <version>3.18</version>
+        <title>FreeImageNET</title>
+        <authors>FreeImage developers</authors>
+        <owners>morpheus_xx</owners>
+        <licenseUrl>http://freeimage.sourceforge.net/license.html</licenseUrl>
+        <projectUrl>http://freeimage.sourceforge.net/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>FreeImage is an Open Source library project for developers who would like to support popular graphics image formats like PNG, BMP, JPEG, TIFF and others as needed by today's multimedia applications. FreeImage is easy to use, fast, multithreading safe, compatible with all 32-bit or 64-bit versions of Windows, and cross-platform (works both with Linux and Mac OS X).</description>
+        <summary>Contains a customized .NET wrapper for FreeImage.dll that supports both 32 and 64-bit processes.</summary>
+        <dependencies>
+            <group targetFramework=".NETFramework4.5" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="build\MediaPortal.FreeImageNET.targets" target="build\MediaPortal.FreeImageNET.targets" />
+        <file src="x32\FreeImage.dll" target="content\x86\FreeImage.dll" />
+        <file src="x64\FreeImage.dll" target="content\x64\FreeImage.dll" />
+        <file src="FreeImageNET.dll" target="lib\net45\FreeImageNET.dll" />
+    </files>
+</package>

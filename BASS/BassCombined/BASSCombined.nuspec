@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>BASSCombined</id>
+        <version>2.4.13.8</version>
+        <title>BASS Core (bass.dll)</title>
+        <authors>un4seen Developments</authors>
+        <owners>chefkoch, morpheus_xx</owners>
+        <licenseUrl>http://www.un4seen.com/bass.html#license</licenseUrl>
+        <projectUrl>http://www.un4seen.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This is a custom package that contains both x86 and x64 libraries and plugins.
+		BASS is an audio library for use in software on several platforms. Its purpose is to provide developers with powerful and efficient sample, stream (MP3, MP2, MP1, OGG, WAV, AIFF, custom generated, and more via OS codecs and add-ons), MOD music (XM, IT, S3M, MOD, MTM, UMX), MO3 music (MP3/OGG compressed MODs), and recording functions. All in a compact DLL that won't bloat your distribution.</description>
+        <summary>Contains the bass.dll and plugins</summary>
+    </metadata>
+    <files>
+        <file src="basscombined.targets" target="build\basscombined.targets" />
+    </files>
+</package>

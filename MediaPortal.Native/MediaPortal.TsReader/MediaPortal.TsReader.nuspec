@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MediaPortal.TsReader</id>
-        <version>4.2.2.39</version>
-        <title>TsReader.ax</title>
+        <version>5.2.3.43</version>
+        <title>TsReader.ax (x86 + x64)</title>
         <authors>Team MediaPortal</authors>
         <owners>chefkoch</owners>
         <projectUrl>http://www.team-mediaportal.com/</projectUrl>
@@ -11,10 +11,11 @@
         <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>TsReader is a DirectShow filter used to playback MPEG Transport Streams (.ts) from files or streaming sources. It's the main filter for TV playback in MediaPortal.</description>
-        <copyright>Copyright © Team MediaPortal 2007 - 2017</copyright>
+        <copyright>Copyright © Team MediaPortal 2007 - 2019</copyright>
     </metadata>
     <files>
         <file src="MediaPortal.TsReader.targets" target="build\MediaPortal.TsReader.targets" />
-        <file src="TsReader.ax" target="TsReader.ax" />
+        <file src="x64\TsReader.ax" target="x64\TsReader.ax" />
+        <file src="x86\TsReader.ax" target="x86\TsReader.ax" />
     </files>
 </package>

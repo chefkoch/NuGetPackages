@@ -1,20 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>MediaPortal.CCCP</id>
-        <version>3.0.0.1001</version>
-        <title>Core CC Parser Filter</title>
+        <version>4.0.0.0</version>
+        <title>Core CC Parser Filter (x86 + x64)</title>
         <authors>Team MediaPortal</authors>
         <owners>Morpheus_xx</owners>
+        <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
         <projectUrl>http://www.team-mediaportal.com/</projectUrl>
         <iconUrl>http://www.team-mediaportal.com/images/stories/homepageV3/promotional_materials/MP2_Icon_General_1.png</iconUrl>
-        <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>CCCP (Core Closed Captioning Parser) is a DirectShow filter that extracts Closed Captioning data from MPEG2 video. The data is normally used by the downstream filter to render and mix the CC with main video to aid hearing or language-impaired users.</description>
-        <copyright>Copyright © Team MediaPortal 2007 - 2017</copyright>
+        <copyright>Copyright © Team MediaPortal 2007 - 2019</copyright>
     </metadata>
     <files>
         <file src="MediaPortal.CCCP.targets" target="build\MediaPortal.CCCP.targets" />
-        <file src="cccp.ax" target="cccp.ax" />
+        <file src="x64\CCCP.ax" target="x64\CCCP.ax" />
+        <file src="x86\cccp.ax" target="x86\cccp.ax" />
     </files>
 </package>
