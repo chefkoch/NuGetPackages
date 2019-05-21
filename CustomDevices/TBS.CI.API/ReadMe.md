@@ -13,6 +13,8 @@ Content
 
 Changelog
 ---
+  - v1.0.2.3
+      - Package based on official CI DLL 1.0.2.3.
   - v1.0.2.2
       - Package based on official CI DLL 1.0.2.2.
   - v1.0.2.0
