@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MediaPortal.DirectX9</id>
+        <version>9.0</version>
+        <title>MediaPortal.DirectX9 mininum runtime files (x86 + x64)</title>
+        <authors>Team MediaPortal</authors>
+        <owners>morpheus_xx</owners>
+        <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+        <projectUrl>http://www.team-mediaportal.com/</projectUrl>
+        <iconUrl>http://www.team-mediaportal.com/images/stories/homepageV3/promotional_materials/MP2_Icon_General_1.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>DirectX9 runtime files</description>
+        <copyright>Copyright © Team MediaPortal 2007 - 2019</copyright>
+    </metadata>
+    <files>
+        <file src="MediaPortal.DirectX9.targets" target="build\MediaPortal.DirectX9.targets" />
+        <file src="x64\D3DCompiler_43.dll" target="x64\D3DCompiler_43.dll" />
+        <file src="x64\d3dx9_43.dll" target="x64\d3dx9_43.dll" />
+        <file src="x86\D3DCompiler_43.dll" target="x86\D3DCompiler_43.dll" />
+        <file src="x86\d3dx9_43.dll" target="x86\d3dx9_43.dll" />
+    </files>
+</package>
